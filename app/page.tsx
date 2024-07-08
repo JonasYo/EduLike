@@ -1,13 +1,13 @@
-"use client"
+'use client';
 
-import { Metadata } from "next"
-import { Button } from "components/Button/Button"
-import CounterUp from "components/CenterUp/CenterUp"
-import React, { useState, ChangeEvent, FormEvent } from "react"
+import { Metadata } from 'next';
+import { Button } from 'components/Button/Button';
+import CounterUp from 'components/CenterUp/CenterUp';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-import Layout from "../components/layout/Layout"
-import TextEffect from "../components/TextEffect/TextEffect"
-import useDeviceDetection from "hooks/useDeviceDetection"
+import Layout from '../components/layout/Layout';
+import TextEffect from '../components/TextEffect/TextEffect';
+import useDeviceDetection from 'hooks/useDeviceDetection';
 
 // export const metadata: Metadata = {
 //   title: "Next.js Enterprise Boilerplate",
@@ -27,68 +27,73 @@ import useDeviceDetection from "hooks/useDeviceDetection"
 // }
 
 interface FormData {
-  subject: string
-  name: string
-  email: string
-  message: string
-  termsAccepted: boolean
+  subject: string;
+  name: string;
+  email: string;
+  message: string;
+  termsAccepted: boolean;
 }
 
 export default function Web() {
   const [formData, setFormData] = useState<FormData>({
-    subject: "",
-    name: "",
-    email: "",
-    message: "",
+    subject: '',
+    name: '',
+    email: '',
+    message: '',
     termsAccepted: false,
-  })
-  const { isMobile } = useDeviceDetection()
+  });
+  const { isMobile } = useDeviceDetection();
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target
-    const newValue = type === "checkbox" ? (e.target as HTMLInputElement).checked : value
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
+    const { name, value, type } = e.target;
+    const newValue =
+      type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
 
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: newValue,
-    }))
-  }
+    }));
+  };
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log("formData", formData)
-    const response = await fetch("/api/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    e.preventDefault();
+    console.log('formData', formData);
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
-    })
+    });
 
     if (response.ok) {
-      console.log("Email sent successfully")
+      console.log('Email sent successfully');
       setFormData({
-        subject: "",
-        name: "",
-        email: "",
-        message: "",
+        subject: '',
+        name: '',
+        email: '',
+        message: '',
         termsAccepted: false,
-      })
+      });
     } else {
-      console.error("Failed to send email")
+      console.error('Failed to send email');
     }
-  }
+  };
 
   return (
     <>
       <Layout>
         <section
           className="relative -mt-24 bg-cover bg-top bg-no-repeat pb-8 pt-24"
-          style={{ backgroundImage: "url('assets/imgs/placeholders/banner.webp')" }}
+          style={{
+            backgroundImage: "url('assets/imgs/placeholders/banner.webp')",
+          }}
         >
           <div className="container flex min-h-[72vh] flex-col justify-center">
             <div className="montserrat py-12 text-center">
               <div className="mx-auto mb-8 max-w-3xl">
                 <p className="text-3xl leading-relaxed md:text-3xl  lg:text-4xl">
-                  Soluções de{" "}
+                  Soluções de{' '}
                   <strong className="">
                     <br className="md:hidden" />
                     marketing digital
@@ -96,7 +101,9 @@ export default function Web() {
                   <br />
                   que geram {isMobile && <br />}
                   <span className="typewrite d-inline text-brand text-primary-500">
-                    <TextEffect texts={["equity de marca", "credibilidade", "conversões"]} />
+                    <TextEffect
+                      texts={['equity de marca', 'credibilidade', 'conversões']}
+                    />
                   </span>
                 </p>
               </div>
@@ -159,10 +166,12 @@ export default function Web() {
                         ></path>
                       </svg>
                     </div>
-                    <h3 className="font-heading mb-2 font-bold">Criatividade</h3>
+                    <h3 className="font-heading mb-2 font-bold">
+                      Criatividade
+                    </h3>
                     <p className="text-blueGray-400 text-sm leading-loose">
-                      Estamos em busca de ideias inovadoras e soluções criativas para transformar sua visão em
-                      realidade.
+                      Estamos em busca de ideias inovadoras e soluções criativas
+                      para transformar sua visão em realidade.
                     </p>
                   </div>
                 </div>
@@ -185,9 +194,12 @@ export default function Web() {
                         ></path>
                       </svg>
                     </div>
-                    <h3 className="font-heading mb-2 font-bold">Início do Projeto</h3>
+                    <h3 className="font-heading mb-2 font-bold">
+                      Início do Projeto
+                    </h3>
                     <p className="text-blueGray-400 text-sm leading-loose">
-                      Dê o pontapé inicial no seu projeto com uma abordagem estratégica e planejada.
+                      Dê o pontapé inicial no seu projeto com uma abordagem
+                      estratégica e planejada.
                     </p>
                   </div>
                 </div>
@@ -199,7 +211,9 @@ export default function Web() {
                     <span className="rounded-xl bg-primary-500 px-3 py-1 text-xs font-semibold text-white">
                       Por que nos escolher
                     </span>
-                    <h2 className="font-heading mt-3 text-4xl font-bold">Principais recursos</h2>
+                    <h2 className="font-heading mt-3 text-4xl font-bold">
+                      Principais recursos
+                    </h2>
                   </div>
 
                   <div className="flex items-start py-4">
@@ -220,9 +234,12 @@ export default function Web() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-heading mb-2 text-xl font-semibold">Expanda Seu Alcance</h3>
+                      <h3 className="font-heading mb-2 text-xl font-semibold">
+                        Expanda Seu Alcance
+                      </h3>
                       <p className="text-blueGray-400 leading-loose">
-                        Amplie o impacto da sua presença digital e conquiste novos mercados.
+                        Amplie o impacto da sua presença digital e conquiste
+                        novos mercados.
                       </p>
                     </div>
                   </div>
@@ -245,7 +262,9 @@ export default function Web() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-heading mb-2 text-xl font-semibold">Crescimento Anual</h3>
+                      <h3 className="font-heading mb-2 text-xl font-semibold">
+                        Crescimento Anual
+                      </h3>
                       <p className="text-blueGray-400 leading-loose">
                         Experimente um crescimento anual contínuo e sustentável.
                       </p>
@@ -270,9 +289,12 @@ export default function Web() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-heading mb-2 text-xl font-semibold">Agende Seus Profissionais</h3>
+                      <h3 className="font-heading mb-2 text-xl font-semibold">
+                        Agende Seus Profissionais
+                      </h3>
                       <p className="text-blueGray-400 leading-loose">
-                        Organize metas e maximize a produtividade com eficiência e facilidade.
+                        Organize metas e maximize a produtividade com eficiência
+                        e facilidade.
                       </p>
                     </div>
                   </div>
@@ -284,7 +306,9 @@ export default function Web() {
 
         <section
           className="bg-top bg-no-repeat py-20 xl:bg-contain"
-          style={{ backgroundImage: "url('assets/imgs/backgrounds/intersect.svg')" }}
+          style={{
+            backgroundImage: "url('assets/imgs/backgrounds/intersect.svg')",
+          }}
           id="about"
         >
           <div className="container">
@@ -300,45 +324,69 @@ export default function Web() {
               </div>
               <div className="w-full lg:w-1/2">
                 <p className="text-blueGray-400 leading-loose">
-                  A Experimento 636 é a especializada em inbound marketing para instituições de ensino, a Experimento
-                  636 tem um papel cada vez mais relevante no mercado educacional. Mais que uma agência, buscamos a
-                  transformação digital da prestação dos serviços educacionais, por meio de uma comunicação eficiente e
-                  da divulgação e valorização do trabalho pedagógico, promovendo o fortalecimento da marca da escola e a
-                  retenção e captação de alunos.
+                  A Experimento 636 é a especializada em inbound marketing para
+                  instituições de ensino, a Experimento 636 tem um papel cada
+                  vez mais relevante no mercado educacional. Mais que uma
+                  agência, buscamos a transformação digital da prestação dos
+                  serviços educacionais, por meio de uma comunicação eficiente e
+                  da divulgação e valorização do trabalho pedagógico, promovendo
+                  o fortalecimento da marca da escola e a retenção e captação de
+                  alunos.
                 </p>
               </div>
             </div>
             <div className="-mx-3 -mb-6 flex flex-wrap text-center">
               <div className="hover-up-5 mb-6 w-full px-3 md:w-1/2 lg:w-1/3">
                 <div className="rounded bg-white p-10 shadow">
-                  <img className="mx-auto my-4 h-36" src="/assets/imgs/illustrations/eating.svg" alt="Imagem" />
-                  <h3 className="font-heading mb-2 text-xl font-bold">FUNIL DE VENDAS</h3>
+                  <img
+                    className="mx-auto my-4 h-36"
+                    src="/assets/imgs/illustrations/eating.svg"
+                    alt="Imagem"
+                  />
+                  <h3 className="font-heading mb-2 text-xl font-bold">
+                    FUNIL DE VENDAS
+                  </h3>
                   <p className="text-blueGray-400 text-sm leading-relaxed">
-                    Utilizamos o modelo de funil de vendas que é uma forma estruturada de atrair leads qualificados
-                    (clientes em potencial) por meio de estratégias de inbound marketing (marketing pela internet),
-                    acompanhando a sua jornada.
+                    Utilizamos o modelo de funil de vendas que é uma forma
+                    estruturada de atrair leads qualificados (clientes em
+                    potencial) por meio de estratégias de inbound marketing
+                    (marketing pela internet), acompanhando a sua jornada.
                   </p>
                 </div>
               </div>
               <div className="hover-up-5 mb-6 w-full px-3 md:w-1/2 lg:w-1/3">
                 <div className="rounded bg-white p-10 shadow">
-                  <img className="mx-auto my-4 h-36" src="/assets/imgs/illustrations/space.svg" alt="Imagem" />
-                  <h3 className="font-heading mb-2 text-xl font-bold">AUTOMAÇÃO</h3>
+                  <img
+                    className="mx-auto my-4 h-36"
+                    src="/assets/imgs/illustrations/space.svg"
+                    alt="Imagem"
+                  />
+                  <h3 className="font-heading mb-2 text-xl font-bold">
+                    AUTOMAÇÃO
+                  </h3>
                   <p className="text-blueGray-400 text-sm leading-relaxed">
-                    Os recursos de automação auxiliam na gestão do inbound marketing, por meio do controle dos leads nas
-                    etapas do funil de vendas e a mensuração dos resultados, para que os objetivos da instituição sejam
-                    alcançados.
+                    Os recursos de automação auxiliam na gestão do inbound
+                    marketing, por meio do controle dos leads nas etapas do
+                    funil de vendas e a mensuração dos resultados, para que os
+                    objetivos da instituição sejam alcançados.
                   </p>
                 </div>
               </div>
               <div className="hover-up-5 mb-6 w-full px-3 lg:w-1/3">
                 <div className="rounded bg-white p-10 shadow">
-                  <img className="mx-auto my-4 h-36" src="/assets/imgs/illustrations/tasks.svg" alt="Imagem" />
-                  <h3 className="font-heading mb-2 text-xl font-bold">MARKETING DE CONTEÚDO</h3>
+                  <img
+                    className="mx-auto my-4 h-36"
+                    src="/assets/imgs/illustrations/tasks.svg"
+                    alt="Imagem"
+                  />
+                  <h3 className="font-heading mb-2 text-xl font-bold">
+                    MARKETING DE CONTEÚDO
+                  </h3>
                   <p className="text-blueGray-400 text-sm leading-relaxed">
-                    As instituições de ensino naturalmente são produtoras de conteúdo relevante. A Rabbit Digital
-                    auxilia nas publicações por meio de um planejamento de postagens nas redes sociais, no blog e no
-                    site.
+                    As instituições de ensino naturalmente são produtoras de
+                    conteúdo relevante. A Rabbit Digital auxilia nas publicações
+                    por meio de um planejamento de postagens nas redes sociais,
+                    no blog e no site.
                   </p>
                 </div>
               </div>
@@ -351,7 +399,9 @@ export default function Web() {
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h2 className="font-heading my-2 text-3xl font-bold md:text-4xl">
                 Serviços digitais <br />
-                <span className="text-primary-500">mais completos do mercado</span>
+                <span className="text-primary-500">
+                  mais completos do mercado
+                </span>
               </h2>
               {/* <p className="text-blueGray-400 leading-loose">mais completos do mercado</p> */}
             </div>
@@ -374,10 +424,13 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Consultoria em TI</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Consultoria em TI
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    Na Consultoria em TI, entendemos que a interação da marca é fundamental para a comunicação.
-                    Realmente, inovações e uma experiência positiva do cliente são o cerne do sucesso.
+                    Na Consultoria em TI, entendemos que a interação da marca é
+                    fundamental para a comunicação. Realmente, inovações e uma
+                    experiência positiva do cliente são o cerne do sucesso.
                   </p>
                 </div>
               </div>
@@ -399,10 +452,14 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Desenvolvimento Web</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Desenvolvimento Web
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    No Desenvolvimento Web, compreendemos que a interação da marca é crucial para a comunicação. De
-                    fato, inovações reais e uma experiência positiva do cliente são o coração do sucesso.
+                    No Desenvolvimento Web, compreendemos que a interação da
+                    marca é crucial para a comunicação. De fato, inovações reais
+                    e uma experiência positiva do cliente são o coração do
+                    sucesso.
                   </p>
                 </div>
               </div>
@@ -424,11 +481,14 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Desenvolvimento de Aplicativos</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Desenvolvimento de Aplicativos
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    No Desenvolvimento de Aplicativos, reconhecemos que a interação da marca é essencial para a
-                    comunicação. De fato, inovações reais e uma experiência positiva do cliente são a essência do
-                    sucesso.
+                    No Desenvolvimento de Aplicativos, reconhecemos que a
+                    interação da marca é essencial para a comunicação. De fato,
+                    inovações reais e uma experiência positiva do cliente são a
+                    essência do sucesso.
                   </p>
                 </div>
               </div>
@@ -456,10 +516,13 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Marketing Digital</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Marketing Digital
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    No Marketing Digital, acreditamos que a interação da marca é vital para a comunicação. Realmente,
-                    inovações e uma experiência positiva do cliente são o centro do sucesso.
+                    No Marketing Digital, acreditamos que a interação da marca é
+                    vital para a comunicação. Realmente, inovações e uma
+                    experiência positiva do cliente são o centro do sucesso.
                   </p>
                 </div>
               </div>
@@ -481,10 +544,13 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Soluções Certas</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Soluções Certas
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    Nas Soluções Certas, entendemos que a interação da marca é crucial para a comunicação. Realmente,
-                    inovações e uma experiência positiva do cliente são o coração do sucesso.
+                    Nas Soluções Certas, entendemos que a interação da marca é
+                    crucial para a comunicação. Realmente, inovações e uma
+                    experiência positiva do cliente são o coração do sucesso.
                   </p>
                 </div>
               </div>
@@ -506,10 +572,13 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Site Responsivo</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Site Responsivo
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    No Site Responsivo, reconhecemos que a interação da marca é essencial para a comunicação. De fato,
-                    inovações reais e uma experiência positiva do cliente são a essência do sucesso.
+                    No Site Responsivo, reconhecemos que a interação da marca é
+                    essencial para a comunicação. De fato, inovações reais e uma
+                    experiência positiva do cliente são a essência do sucesso.
                   </p>
                 </div>
               </div>
@@ -533,8 +602,9 @@ export default function Web() {
                   </div>
                   <h3 className="font-heading mb-2 font-bold">Design Limpo</h3>
                   <p className="text-blueGray-400 text-sm">
-                    No Design Limpo, acreditamos que a interação da marca é vital para a comunicação. Realmente,
-                    inovações e uma experiência positiva do cliente são o centro do sucesso.
+                    No Design Limpo, acreditamos que a interação da marca é
+                    vital para a comunicação. Realmente, inovações e uma
+                    experiência positiva do cliente são o centro do sucesso.
                   </p>
                 </div>
               </div>
@@ -556,10 +626,14 @@ export default function Web() {
                       ></path>
                     </svg>
                   </div>
-                  <h3 className="font-heading mb-2 font-bold">Pesquisa de Processos</h3>
+                  <h3 className="font-heading mb-2 font-bold">
+                    Pesquisa de Processos
+                  </h3>
                   <p className="text-blueGray-400 text-sm">
-                    Na Pesquisa de Processos, entendemos que a interação da marca é crucial para a comunicação.
-                    Realmente, inovações e uma experiência positiva do cliente são o coração do sucesso.
+                    Na Pesquisa de Processos, entendemos que a interação da
+                    marca é crucial para a comunicação. Realmente, inovações e
+                    uma experiência positiva do cliente são o coração do
+                    sucesso.
                   </p>
                 </div>
               </div>
@@ -592,12 +666,16 @@ export default function Web() {
                 </div>
                 <div className="ml-2 sm:ml-6 sm:py-2">
                   <div className="flex">
-                    <span className="font-heading font-bold sm:text-2xl">+ </span>
+                    <span className="font-heading font-bold sm:text-2xl">
+                      +{' '}
+                    </span>
                     <span className="font-heading count font-bold sm:text-2xl">
                       <CounterUp count={150} time={3} />
                     </span>
                   </div>
-                  <p className="text-blueGray-400 text-xs sm:text-base">Parceiros</p>
+                  <p className="text-blueGray-400 text-xs sm:text-base">
+                    Parceiros
+                  </p>
                 </div>
               </div>
               <div
@@ -622,13 +700,20 @@ export default function Web() {
                 </div>
                 <div className="ml-2 sm:ml-6 sm:py-2">
                   <div className="flex">
-                    <span className="font-heading font-bold sm:text-2xl">+ </span>
+                    <span className="font-heading font-bold sm:text-2xl">
+                      +{' '}
+                    </span>
                     <span className="font-heading count font-bold sm:text-2xl">
                       <CounterUp count={58} time={3} />
                     </span>
-                    <span className="font-heading font-bold sm:text-2xl"> k </span>
+                    <span className="font-heading font-bold sm:text-2xl">
+                      {' '}
+                      k{' '}
+                    </span>
                   </div>
-                  <p className="text-blueGray-400 text-xs sm:text-base">Projetos completados</p>
+                  <p className="text-blueGray-400 text-xs sm:text-base">
+                    Projetos completados
+                  </p>
                 </div>
               </div>
               <div
@@ -653,12 +738,16 @@ export default function Web() {
                 </div>
                 <div className="ml-2 sm:ml-6 sm:py-2">
                   <div className="flex">
-                    <span className="font-heading font-bold sm:text-2xl">+ </span>
+                    <span className="font-heading font-bold sm:text-2xl">
+                      +{' '}
+                    </span>
                     <span className="font-heading count font-bold sm:text-2xl">
                       <CounterUp count={500} time={3} />
                     </span>
                   </div>
-                  <p className="text-blueGray-400 text-xs sm:text-base">Clientes Felizes</p>
+                  <p className="text-blueGray-400 text-xs sm:text-base">
+                    Clientes Felizes
+                  </p>
                 </div>
               </div>
               <div
@@ -683,12 +772,16 @@ export default function Web() {
                 </div>
                 <div className="ml-2 sm:ml-6 sm:py-2">
                   <div className="flex">
-                    <span className="font-heading font-bold sm:text-2xl">+ </span>
+                    <span className="font-heading font-bold sm:text-2xl">
+                      +{' '}
+                    </span>
                     <span className="font-heading count font-bold sm:text-2xl">
                       <CounterUp count={320} time={3} />
                     </span>
                   </div>
-                  <p className="text-blueGray-400 text-xs sm:text-base">Trabalho de Pesquisa</p>
+                  <p className="text-blueGray-400 text-xs sm:text-base">
+                    Trabalho de Pesquisa
+                  </p>
                 </div>
               </div>
             </div>
@@ -699,8 +792,12 @@ export default function Web() {
           <div className="container ">
             <div className="mx-auto max-w-2xl lg:max-w-3xl">
               <div className="mb-12 text-center">
-                <h2 className="font-heading animated text-4xl font-bold">Entre em contato</h2>
-                <p className="text-blueGray-400 animated">Teremos o maior prazer em ouvi-lo</p>
+                <h2 className="font-heading animated text-4xl font-bold">
+                  Entre em contato
+                </h2>
+                <p className="text-blueGray-400 animated">
+                  Teremos o maior prazer em ouvi-lo
+                </p>
               </div>
               <div className="-mx-3 flex flex-wrap text-center">
                 <div className="animated mb-12 w-1/2 px-3 lg:w-1/3">
@@ -810,9 +907,13 @@ export default function Web() {
                       </div>
                       <div>
                         <label className="bg-blueGray-50 flex rounded px-2">
-                          <input className="hidden" type="file" name="Choose file" />
+                          <input
+                            className="hidden"
+                            type="file"
+                            name="Choose file"
+                          />
                           <span className="bg-blueGray-500 hover:bg-blueGray-600 my-1 ml-auto cursor-pointer rounded px-4 py-3 text-xs font-semibold leading-none text-white">
-                            {" "}
+                            {' '}
                             Anexos
                           </span>
                         </label>
@@ -837,7 +938,9 @@ export default function Web() {
                         checked={formData.termsAccepted}
                         onChange={handleChange}
                       />
-                      <span className="text-sm font-semibold">Concordo com os termos e condições.</span>
+                      <span className="text-sm font-semibold">
+                        Concordo com os termos e condições.
+                      </span>
                     </label>
                     <button
                       className="rounded border border-white bg-transparent px-8 py-4 text-sm font-semibold leading-none text-white hover:border-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500"
@@ -853,5 +956,5 @@ export default function Web() {
         </section>
       </Layout>
     </>
-  )
+  );
 }

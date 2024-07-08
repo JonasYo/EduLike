@@ -39,4 +39,4 @@ next-env.d.ts
 
 renovate.json
 report-bundle-size.js
-.vscode
+/.npm-only-allow

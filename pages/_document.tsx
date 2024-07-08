@@ -1,4 +1,4 @@
-import Document, { Head, Html, Main, NextScript } from "next/document"
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -9,7 +9,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+          />
 
           {/* <link rel="stylesheet" href="assets/css/styles.css" /> */}
         </Head>
@@ -18,8 +21,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import Layout from '../components/layout/Layout';
 
@@ -18,15 +18,10 @@ const NotFound = () => {
               />
             </div>
 
-            <span
-              className="font-heading text-4xl font-bold text-primary-500"
-            >
+            <span className="font-heading text-4xl font-bold text-primary-500">
               Error 404
             </span>
-            <h2
-              className="font-heading mb-2 text-4xl font-bold"
-              
-            >
+            <h2 className="font-heading mb-2 text-4xl font-bold">
               Algo deu errado!
             </h2>
             <p className="text-blueGray-400 mb-6">
@@ -34,17 +29,12 @@ const NotFound = () => {
             </p>
             <div>
               <Link href="/">
-                <p
-                  className="mb-4 block rounded bg-blue-400 px-8 py-4 text-center text-xs font-semibold leading-none text-white hover:bg-blue-500 sm:mb-0 sm:mr-3 sm:inline-block"
-                  
-                >
+                <p className="mb-4 block rounded bg-blue-400 px-8 py-4 text-center text-xs font-semibold leading-none text-white hover:bg-blue-500 sm:mb-0 sm:mr-3 sm:inline-block">
                   Voltar para Home
                 </p>
               </Link>
               <Link href="/contact">
-                <p
-                  className="text-blueGray-500 hover:text-blueGray-800 bg-blueGray-50 hover:bg-blueGray-100 block rounded px-8 py-4 text-center text-xs font-semibold leading-none sm:inline-block"
-                >
+                <p className="text-blueGray-500 hover:text-blueGray-800 bg-blueGray-50 hover:bg-blueGray-100 block rounded px-8 py-4 text-center text-xs font-semibold leading-none sm:inline-block">
                   Fale Conosco
                 </p>
               </Link>
@@ -53,7 +43,7 @@ const NotFound = () => {
         </section>
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

@@ -14,20 +14,26 @@ import {
   Section,
   Tailwind,
   Text,
-} from "@react-email/components";
-import * as React from "react";
+} from '@react-email/components';
+import * as React from 'react';
 
 interface InterestProps {
-  subject: string
-  name: string
-  email: string
-  phone: string
-  message: string
+  subject: string;
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
 }
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
 
-export const Interest = ({ subject, name, email, phone, message }: InterestProps) => {
+export const Interest = ({
+  subject,
+  name,
+  email,
+  phone,
+  message,
+}: InterestProps) => {
   return (
     <Html>
       <Head />
@@ -39,27 +45,31 @@ export const Interest = ({ subject, name, email, phone, message }: InterestProps
               Novo Interesse Recebido: {subject}
             </Heading>
             <Text className="text-[14px] leading-[24px] text-black">
-              Olá, Gostaríamos de informar que recebemos um novo interesse em nossos serviços/produtos através do
-              formulário de interesse.
+              Olá, Gostaríamos de informar que recebemos um novo interesse em
+              nossos serviços/produtos através do formulário de interesse.
             </Text>
             <Text className="text-[14px] leading-[24px] text-black">
               <strong>Detalhes do Interessado:</strong>
             </Text>
             <Text className="text-[14px] leading-[24px] text-black">
-              - Nome: {name} <br />- Email: {email} <br />- Telefone: {phone} <br />- Mensagem: {message}
+              - Nome: {name} <br />- Email: {email} <br />- Telefone: {phone}{' '}
+              <br />- Mensagem: {message}
             </Text>
 
             <Text className="mb-[32px] mt-[32px] text-[14px] leading-[24px] text-black">
-              Estamos apurando as informações e entraremos em contato com o cliente o mais rápido possível. Para
-              qualquer questão urgente ou para mais informações, por favor, entre em contato diretamente.
+              Estamos apurando as informações e entraremos em contato com o
+              cliente o mais rápido possível. Para qualquer questão urgente ou
+              para mais informações, por favor, entre em contato diretamente.
             </Text>
             <Hr className="mx-0 my-[26px] w-full border border-solid border-[#eaeaea]" />
-            <Text className="text-muted-foreground text-[12px] leading-[24px] text-slate-500">EduLike</Text>
+            <Text className="text-muted-foreground text-[12px] leading-[24px] text-slate-500">
+              EduLike
+            </Text>
           </Container>
         </Body>
       </Tailwind>
     </Html>
-  )
-}
+  );
+};
 
-export default Interest
+export default Interest;

@@ -1,10 +1,10 @@
-"use client"
+'use client';
 
 import React from 'react';
-import { Typewriter } from "react-simple-typewriter"
+import { Typewriter } from 'react-simple-typewriter';
 
 export interface TextEffectProps {
-  texts?: string[]
+  texts?: string[];
 }
 
 const TextEffect = ({ texts = [] }: TextEffectProps) => {
@@ -20,7 +20,7 @@ const TextEffect = ({ texts = [] }: TextEffectProps) => {
         delaySpeed={3000}
       />
     </>
-  )
-}
+  );
+};
 
 export default TextEffect;

@@ -1,19 +1,23 @@
-import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
+import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
-function CounterUp({ count, time }) {
-    return (
-        <>
-            {/* {/ <CountUp end={count} duration={3}/> /} */}
-            <CountUp end={count} duration={time}>
-                {({ countUpRef, start }) => (
-                    <VisibilitySensor onChange={start} delayedCall>
-                        <span ref={countUpRef}>count</span>
-                    </VisibilitySensor>
-                )}
-            </CountUp>
-        </>
-    );
+export interface CounterUpProps {
+  count: number;
+  time: number;
 }
 
-export default  CounterUp
+function CounterUp({ count, time }: CounterUpProps) {
+  return (
+    <>
+      <CountUp end={count} duration={time}>
+        {({ countUpRef, start }) => (
+          <VisibilitySensor onChange={start} delayedCall>
+            <span ref={countUpRef}>count</span>
+          </VisibilitySensor>
+        )}
+      </CountUp>
+    </>
+  );
+}
+
+export default CounterUp;

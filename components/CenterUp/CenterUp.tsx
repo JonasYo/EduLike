@@ -1,20 +1,20 @@
-"use client"
+'use client';
 
-import React, { useEffect, useRef, useState } from "react"
-import CountUp, { CountUpProps } from "react-countup"
-import VisibilitySensor from "react-visibility-sensor"
+import React, { useEffect, useRef, useState } from 'react';
+import CountUp, { CountUpProps } from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 interface CounterUpProps {
-  count: number
-  time: number
+  count: number;
+  time: number;
 }
 
 const CounterUp: React.FC<CounterUpProps> = ({ count, time }) => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   const onVisibilityChange = (isVisible: boolean) => {
-    setIsVisible(isVisible)
-  }
+    setIsVisible(isVisible);
+  };
 
   return (
     <div>
@@ -30,7 +30,7 @@ const CounterUp: React.FC<CounterUpProps> = ({ count, time }) => {
         </div>
       </VisibilitySensor>
     </div>
-  )
-}
+  );
+};
 
-export default CounterUp
+export default CounterUp;

@@ -19,28 +19,31 @@ interface RequestBody {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json() as RequestBody;;
+    const body = (await req.json()) as RequestBody;
     const { subject, name, email, message, phone } = body;
 
-    console.log("email: " + email)
+    console.log('email: ' + email);
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: email,
       subject: `EduLike - ${subject}`,
       react: Interest({
-        subject, name, email, message, phone
+        subject,
+        name,
+        email,
+        message,
+        phone,
       }),
     });
-    await resend.emails.send(
-      {
-        from: 'onboarding@resend.dev',
-        to: email,
-        subject: `EduLike - ${subject}`,
-        react: Confirmation({
-          subject, name,
-        }),
-      }
-    );
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: email,
+      subject: `EduLike - ${subject}`,
+      react: Confirmation({
+        subject,
+        name,
+      }),
+    });
 
     if (error) {
       return Response.json({ error }, { status: 500 });

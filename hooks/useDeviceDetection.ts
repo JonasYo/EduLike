@@ -7,13 +7,19 @@ interface DeviceState {
 }
 
 const useDeviceDetection = (): DeviceState => {
-  const [devices, setDevices] = useState<DeviceState>({ isMobile: false, isTablet: false, isDesktop: false });
+  const [devices, setDevices] = useState<DeviceState>({
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+  });
 
   useEffect(() => {
     const handleDeviceDetection = () => {
       const userAgent = navigator.userAgent.toLowerCase();
-      const isMobile = /iphone|ipad|ipod|android|blackberry|windows phone/g.test(userAgent);
-      const isTablet = /(ipad|tablet|playbook|silk)|(android(?!.*mobile))/g.test(userAgent);
+      const isMobile =
+        /iphone|ipad|ipod|android|blackberry|windows phone/g.test(userAgent);
+      const isTablet =
+        /(ipad|tablet|playbook|silk)|(android(?!.*mobile))/g.test(userAgent);
 
       if (isMobile) {
         setDevices({ isMobile: true, isTablet: false, isDesktop: false });
