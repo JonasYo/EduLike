@@ -1,5 +1,6 @@
 import React from 'react';
-import { Montserrat_Alternates, Barlow } from 'next/font/google';
+
+import { Barlow, Montserrat_Alternates } from 'next/font/google';
 import 'styles/tailwind.css';
 
 const montserrat_alternates_init = Montserrat_Alternates({

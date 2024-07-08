@@ -38,59 +38,49 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: [
-          ['builtin', 'external'],
-          'internal',
-          ['parent', 'sibling', 'index'],
-          'object',
-          'unknown',
-          'type',
-          'react',
-          'next',
-          'other packages',
-          'hooks',
-          'components',
-        ],
+        'newlines-between': 'always',
+        groups: ['builtin', 'external', 'internal'],
         pathGroups: [
           {
             pattern: 'react',
-            group: 'react',
+            group: 'external',
             position: 'before',
           },
           {
-            pattern: 'next',
-            group: 'next',
+            pattern: '~/**',
+            group: 'external',
             position: 'before',
           },
           {
-            pattern: 'hooks/**',
-            group: 'hooks',
-            position: 'after',
+            pattern: '~/api/**',
+            group: 'internal',
           },
           {
-            pattern: 'components/**',
-            group: 'components',
-            position: 'after',
+            pattern: '~/pages/**',
+            group: 'internal',
+          },
+          {
+            pattern: '~/components/**',
+            group: 'internal',
           },
           ...getDirectoriesToSort().map((singleDir) => ({
             pattern: `${singleDir}/**`,
             group: 'internal',
           })),
           {
-            pattern: 'env',
+            pattern: '~/hooks/**',
             group: 'internal',
           },
           {
-            pattern: 'theme',
+            pattern: '~/helpers/**',
             group: 'internal',
           },
           {
-            pattern: 'public/**',
+            pattern: '~/styles/**',
             group: 'internal',
-            position: 'after',
           },
         ],
-        pathGroupsExcludedImportTypes: ['internal'],
+        pathGroupsExcludedImportTypes: ['react'],
         alphabetize: {
           order: 'asc',
           caseInsensitive: true,

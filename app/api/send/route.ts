@@ -1,5 +1,6 @@
-import { Interest, Confirmation } from 'components/EmailTemplates';
 import { Resend } from 'resend';
+
+import { Confirmation, Interest } from 'components/EmailTemplates';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 interface CustomEmailOptions {

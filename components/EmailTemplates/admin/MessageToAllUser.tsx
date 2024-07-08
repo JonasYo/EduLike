@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import {
   Body,
   Container,
@@ -10,7 +12,6 @@ import {
   Text,
 } from '@react-email/components';
 import { Markdown } from '@react-email/markdown';
-import * as React from 'react';
 
 interface VercelInviteUserEmailProps {
   username: string;
@@ -32,7 +33,7 @@ export const MessageToAllUsers = ({
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
-        <Body className="mx-auto my-auto bg-white font-sans">
+        <Body className="m-auto bg-white font-sans">
           <Container className="mx-auto my-[40px] w-[465px] rounded-md border border-solid border-slate-300 p-[20px]">
             <Heading className="mx-0 my-[30px] p-0 text-center text-[24px] font-normal text-black">
               {title}

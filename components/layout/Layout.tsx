@@ -1,8 +1,11 @@
 'use client';
 
-import Head from 'next/head';
 import React, { useState } from 'react';
+
+import Head from 'next/head';
+
 import Whatsapp from 'components/Whatsapp/Whatsapp';
+
 import Footer from './Footer';
 import Header from './Header';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';

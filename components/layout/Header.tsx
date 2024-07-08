@@ -1,7 +1,7 @@
-import useDeviceDetection from 'hooks/useDeviceDetection';
+import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { IoClose, IoMenu } from 'react-icons/io5';
 import {
@@ -10,6 +10,8 @@ import {
   RiLinkedinBoxLine,
   RiWhatsappLine,
 } from 'react-icons/ri';
+
+import useDeviceDetection from 'hooks/useDeviceDetection';
 
 const Header = () => {
   const [scroll, setScroll] = useState(false);
@@ -156,7 +158,7 @@ const Header = () => {
 
         {isMobile && (
           <div
-            className={`absolute top-0 h-full w-full bg-white transition-all ${isMenuOpen ? 'left-0' : '-left-full'}`}
+            className={`absolute top-0 size-full bg-white transition-all ${isMenuOpen ? 'left-0' : '-left-full'}`}
           >
             <div
               className={`flex h-full justify-between px-12 py-24 max-lg:flex-col max-lg:space-y-3.5 lg:items-center`}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
 const ScrollToTop = () => {
@@ -28,7 +29,7 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       className={`${
         showButton ? 'fixed' : 'hidden'
-      } bottom-24 right-7 z-40 flex h-10 w-10 animate-pulse cursor-pointer items-center justify-center overflow-hidden rounded bg-primary-500 p-2 text-center text-white shadow-2xl transition-all `}
+      } bottom-24 right-7 z-40 flex size-10 animate-pulse cursor-pointer items-center justify-center overflow-hidden rounded bg-primary-500 p-2 text-center text-white shadow-2xl transition-all `}
     >
       <AiOutlineArrowUp className="text-4xl" />
     </button>

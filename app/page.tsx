@@ -1,13 +1,15 @@
 'use client';
 
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+
 import { Metadata } from 'next';
+
 import { Button } from 'components/Button/Button';
 import CounterUp from 'components/CenterUp/CenterUp';
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import useDeviceDetection from 'hooks/useDeviceDetection';
 
 import Layout from '../components/layout/Layout';
 import TextEffect from '../components/TextEffect/TextEffect';
-import useDeviceDetection from 'hooks/useDeviceDetection';
 
 // export const metadata: Metadata = {
 //   title: "Next.js Enterprise Boilerplate",
@@ -648,9 +650,9 @@ export default function Web() {
                 className="hover-up-5 wow animate__animated animate__fadeIn flex w-1/2 py-4 lg:w-auto"
                 data-wow-delay=".2s"
               >
-                <div className="bg-blueGray-50 flex h-12 w-12 items-center justify-center rounded-xl text-primary-500 sm:h-20 sm:w-20">
+                <div className="bg-blueGray-50 flex size-12 items-center justify-center rounded-xl text-primary-500 sm:size-20">
                   <svg
-                    className="h-8 w-8"
+                    className="size-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -682,9 +684,9 @@ export default function Web() {
                 className="hover-up-5 wow animate__animated animate__fadeIn flex w-1/2 py-4 lg:w-auto"
                 data-wow-delay=".4s"
               >
-                <div className="bg-blueGray-50 flex h-12 w-12 items-center justify-center rounded-xl text-primary-500 sm:h-20 sm:w-20">
+                <div className="bg-blueGray-50 flex size-12 items-center justify-center rounded-xl text-primary-500 sm:size-20">
                   <svg
-                    className="h-8 w-8"
+                    className="size-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -720,9 +722,9 @@ export default function Web() {
                 className="hover-up-5 wow animate__animated animate__fadeIn flex w-1/2 py-4 lg:w-auto"
                 data-wow-delay=".6s"
               >
-                <div className="bg-blueGray-50 flex h-12 w-12 items-center justify-center rounded-xl text-primary-500 sm:h-20 sm:w-20">
+                <div className="bg-blueGray-50 flex size-12 items-center justify-center rounded-xl text-primary-500 sm:size-20">
                   <svg
-                    className="h-8 w-8"
+                    className="size-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -754,9 +756,9 @@ export default function Web() {
                 className="hover-up-5 wow animate__animated animate__fadeIn flex w-1/2 py-4 lg:w-auto"
                 data-wow-delay=".8s"
               >
-                <div className="bg-blueGray-50 flex h-12 w-12 items-center justify-center rounded-xl text-primary-500 sm:h-20 sm:w-20">
+                <div className="bg-blueGray-50 flex size-12 items-center justify-center rounded-xl text-primary-500 sm:size-20">
                   <svg
-                    className="h-8 w-8"
+                    className="size-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

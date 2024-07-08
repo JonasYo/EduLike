@@ -1,8 +1,10 @@
+import * as React from 'react';
+
 import {
   Body,
   Button,
-  Container,
   Column,
+  Container,
   Head,
   Heading,
   Hr,
@@ -15,7 +17,6 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
-import * as React from 'react';
 
 interface ConfirmationProps {
   subject: string;
@@ -30,7 +31,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
       <Head />
       <Preview>Confirmação de Recebimento: {subject}</Preview>
       <Tailwind>
-        <Body className="mx-auto my-auto bg-white font-sans">
+        <Body className="m-auto bg-white font-sans">
           <Container className="mx-auto my-[40px] w-[465px] rounded-md border border-solid border-slate-300 p-[20px]">
             <Heading className="mx-0 my-[30px] p-0 text-center text-[24px] font-normal text-black">
               Confirmação de Recebimento: {subject}
@@ -54,7 +55,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
               Telefone] ou por este email.
             </Text>
 
-            <Text className="mb-[32px] mt-[32px] text-[14px] leading-[24px] text-black">
+            <Text className="my-[32px] text-[14px] leading-[24px] text-black">
               Atenciosamente,
             </Text>
             <Hr className="mx-0 my-[26px] w-full border border-solid border-[#eaeaea]" />
