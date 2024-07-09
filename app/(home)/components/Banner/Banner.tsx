@@ -1,6 +1,5 @@
-import useDeviceDetection from 'hooks/useDeviceDetection';
-
 import TextEffect from 'components/TextEffect/TextEffect';
+import useDeviceDetection from 'hooks/useDeviceDetection';
 
 const Banner = () => {
   const { isMobile } = useDeviceDetection();

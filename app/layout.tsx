@@ -1,5 +1,4 @@
 import { Analytics } from '@vercel/analytics/react';
-
 import { Metadata } from 'next';
 import { Barlow, Montserrat_Alternates } from 'next/font/google';
 import 'styles/tailwind.css';
