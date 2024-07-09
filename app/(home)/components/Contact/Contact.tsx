@@ -212,6 +212,7 @@ const Contact = () => {
                 <button
                   className="rounded border border-white bg-transparent px-8 py-4 text-sm font-semibold leading-none text-white hover:border-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500"
                   type="submit"
+                  aria-label="Enviar"
                 >
                   Enviar
                 </button>

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
-import CountUp, { CountUpProps } from 'react-countup';
+import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
 interface CounterUpProps {

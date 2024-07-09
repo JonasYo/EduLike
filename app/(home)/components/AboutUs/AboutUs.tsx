@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const AboutUs = () => {
   return (
     <section
@@ -34,10 +36,13 @@ const AboutUs = () => {
         <div className="-mx-3 -mb-6 flex flex-wrap text-center">
           <div className="hover-up-5 mb-6 w-full px-3 md:w-1/2 lg:w-1/3">
             <div className="rounded bg-white p-10 shadow">
-              <img
-                className="mx-auto my-4 h-36"
+              <Image
+                className="mx-auto my-4"
                 src="/assets/imgs/illustrations/eating.svg"
                 alt="Imagem"
+                width={144}
+                height={144}
+                style={{ width: 'auto', height: '9rem' }}
               />
               <h3 className="font-heading mb-2 text-xl font-bold">
                 FUNIL DE VENDAS
@@ -52,10 +57,13 @@ const AboutUs = () => {
           </div>
           <div className="hover-up-5 mb-6 w-full px-3 md:w-1/2 lg:w-1/3">
             <div className="rounded bg-white p-10 shadow">
-              <img
-                className="mx-auto my-4 h-36"
+              <Image
+                className="mx-auto my-4"
                 src="/assets/imgs/illustrations/space.svg"
                 alt="Imagem"
+                width={144}
+                height={144}
+                style={{ width: 'auto', height: '9rem' }}
               />
               <h3 className="font-heading mb-2 text-xl font-bold">AUTOMAÇÃO</h3>
               <p className="text-blueGray-400 text-sm leading-relaxed">
@@ -68,10 +76,13 @@ const AboutUs = () => {
           </div>
           <div className="hover-up-5 mb-6 w-full px-3 lg:w-1/3">
             <div className="rounded bg-white p-10 shadow">
-              <img
-                className="mx-auto my-4 h-36"
+              <Image
+                className="mx-auto my-4"
                 src="/assets/imgs/illustrations/tasks.svg"
                 alt="Imagem"
+                width={144}
+                height={144}
+                style={{ width: 'auto', height: '9rem' }}
               />
               <h3 className="font-heading mb-2 text-xl font-bold">
                 MARKETING DE CONTEÚDO

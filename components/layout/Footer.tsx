@@ -1,5 +1,4 @@
-import React from 'react';
-
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -11,7 +10,13 @@ const Footer = () => {
             <div className="mb-6 w-full px-3 lg:mb-0 lg:w-1/5">
               <Link href="/">
                 <p className="mx-auto inline-block text-3xl font-semibold leading-none lg:mx-0">
-                  <img className="h-10" src="/media-logo.png" alt="Monst" />
+                  <Image
+                    src="/media-logo.png"
+                    alt="Logo"
+                    width={40}
+                    height={40}
+                    style={{ width: 'auto', height: '2.5rem' }}
+                  />
                 </p>
               </Link>
             </div>

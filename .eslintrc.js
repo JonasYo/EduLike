@@ -15,15 +15,26 @@ module.exports = {
       presets: [require.resolve('next/babel')],
     },
   },
+  plugins: ['unused-imports'],
   rules: {
     'tailwindcss/no-custom-classname': 'off',
     'testing-library/prefer-screen-queries': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     '@typescript-eslint/no-unused-vars': [
-      'warn',
+      'error',
       {
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_',
+      },
+    ],
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
     'sort-imports': [
@@ -47,6 +58,11 @@ module.exports = {
             position: 'before',
           },
           {
+            pattern: 'next',
+            group: 'external',
+            position: 'before',
+          },
+          {
             pattern: '~/**',
             group: 'external',
             position: 'before',
@@ -63,10 +79,6 @@ module.exports = {
             pattern: '~/components/**',
             group: 'internal',
           },
-          ...getDirectoriesToSort().map((singleDir) => ({
-            pattern: `${singleDir}/**`,
-            group: 'internal',
-          })),
           {
             pattern: '~/hooks/**',
             group: 'internal',
@@ -79,6 +91,10 @@ module.exports = {
             pattern: '~/styles/**',
             group: 'internal',
           },
+          ...getDirectoriesToSort().map((singleDir) => ({
+            pattern: `${singleDir}/**`,
+            group: 'internal',
+          })),
         ],
         pathGroupsExcludedImportTypes: ['react'],
         alphabetize: {

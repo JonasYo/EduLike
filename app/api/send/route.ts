@@ -3,12 +3,6 @@ import { Resend } from 'resend';
 import { Confirmation, Interest } from 'components/EmailTemplates';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-interface CustomEmailOptions {
-  from: string;
-  to: string[];
-  subject: string;
-  react: any;
-}
 
 interface RequestBody {
   subject: string;

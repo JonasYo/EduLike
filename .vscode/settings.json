@@ -19,7 +19,10 @@
     "typescript",
     "typescriptreact"
   ],
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
   "prettier.requireConfig": true,
+  "files.autoSave": "onFocusChange",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

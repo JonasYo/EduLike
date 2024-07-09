@@ -147,6 +147,7 @@ const Header = () => {
             <button
               className="flex items-center px-3 py-2 text-primary-500"
               onClick={handleMenuToggle}
+              aria-label="Menu"
             >
               <IoMenu color="text-primary-500" className="size-8" />
             </button>
@@ -167,6 +168,7 @@ const Header = () => {
                 <button
                   className="flex items-center px-3 py-2 text-primary-500"
                   onClick={handleMenuToggle}
+                  aria-label="Menu"
                 >
                   <IoClose color="text-primary-500" className="size-8" />
                 </button>

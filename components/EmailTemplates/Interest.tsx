@@ -1,19 +1,11 @@
-import * as React from 'react';
-
 import {
   Body,
-  Button,
-  Column,
   Container,
   Head,
   Heading,
   Hr,
   Html,
-  Img,
-  Link,
   Preview,
-  Row,
-  Section,
   Tailwind,
   Text,
 } from '@react-email/components';
@@ -25,8 +17,6 @@ interface InterestProps {
   phone: string;
   message: string;
 }
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
 
 export const Interest = ({
   subject,
