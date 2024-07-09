@@ -9,7 +9,8 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "explicit",
+    "source.sortMembers": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": [

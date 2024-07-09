@@ -1,19 +1,11 @@
-import * as React from 'react';
-
 import {
   Body,
-  Button,
-  Column,
   Container,
   Head,
   Heading,
   Hr,
   Html,
-  Img,
-  Link,
   Preview,
-  Row,
-  Section,
   Tailwind,
   Text,
 } from '@react-email/components';
@@ -22,8 +14,6 @@ interface ConfirmationProps {
   subject: string;
   name: string;
 }
-
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
 
 export const Confirmation = ({ subject, name }: ConfirmationProps) => {
   return (
