@@ -6,7 +6,7 @@ const Banner = () => {
 
   return (
     <section
-      className="relative -mt-24 bg-cover bg-top bg-no-repeat pb-8 pt-24"
+      className="relative bg-cover bg-top bg-no-repeat pb-8 pt-24"
       style={{
         backgroundImage: "url('assets/imgs/placeholders/banner.webp')",
       }}

@@ -1,15 +1,15 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+
 import Layout from 'components/layout/Layout';
 
-import {
-  AboutUs,
-  Banner,
-  Contact,
-  History,
-  KeyFeatures,
-  Services,
-} from './components';
+const AboutUs = dynamic(() => import('./components/AboutUs'));
+const Banner = dynamic(() => import('./components/Banner'));
+const History = dynamic(() => import('./components/History'));
+const KeyFeatures = dynamic(() => import('./components/KeyFeatures'));
+const Services = dynamic(() => import('./components/Services'));
+const Contact = dynamic(() => import('./components/Contact'));
 
 const Home = () => {
   return (
