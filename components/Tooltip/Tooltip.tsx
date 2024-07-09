@@ -46,7 +46,7 @@ export interface TooltipProps
   side?: 'top' | 'right' | 'bottom' | 'left';
 }
 
-export function Tooltip({
+export default function Tooltip({
   children,
   explainer,
   open,

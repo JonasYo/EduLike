@@ -1,17 +1,22 @@
-import TextEffect from 'components/TextEffect/TextEffect';
+import Image from 'next/image';
+
+import { TextEffect } from 'components';
 import useDeviceDetection from 'hooks/useDeviceDetection';
 
 const Banner = () => {
   const { isMobile } = useDeviceDetection();
 
   return (
-    <section
-      className="relative bg-cover bg-top bg-no-repeat pb-8 pt-24"
-      style={{
-        backgroundImage: "url('assets/imgs/placeholders/banner.webp')",
-      }}
-    >
-      <div className="container flex min-h-[72vh] flex-col justify-center">
+    <section className="relative pb-8 pt-24">
+      <Image
+        src="/assets/imgs/backgrounds/banner.webp"
+        alt="Banner Image"
+        layout="fill"
+        objectFit="cover"
+        priority
+      />
+
+      <div className="container relative z-[2] flex min-h-[72vh] flex-col justify-center">
         <div className="montserrat py-12 text-center">
           <div className="mx-auto mb-8 max-w-3xl">
             <p className="text-3xl leading-relaxed md:text-3xl  lg:text-4xl">

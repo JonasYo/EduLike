@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 
-import Layout from 'components/layout/Layout';
+import { Layout } from 'components/layout';
 
 const AboutUs = dynamic(() => import('./components/AboutUs'));
 const Banner = dynamic(() => import('./components/Banner'));

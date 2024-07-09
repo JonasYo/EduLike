@@ -44,7 +44,7 @@ export interface ButtonProps
   href: string;
 }
 
-export function Button({
+export default function Button({
   className,
   intent,
   size,

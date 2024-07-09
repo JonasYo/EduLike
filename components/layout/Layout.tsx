@@ -1,17 +1,15 @@
 'use client';
 
-import React from 'react';
+import { HTMLAttributes } from 'react';
 
 import Head from 'next/head';
 
-import Whatsapp from 'components/Whatsapp/Whatsapp';
+import { ScrollToTop, Whatsapp } from 'components';
 
 import Footer from './Footer';
 import Header from './Header';
-import ScrollToTop from '../ScrollToTop/ScrollToTop';
 
-export interface LayoutProps
-  extends React.ButtonHTMLAttributes<HTMLAnchorElement> {}
+export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
 
 const Layout = ({ children }: LayoutProps) => {
   return (

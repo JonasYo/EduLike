@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FaWhatsapp } from 'react-icons/fa6';
 
 const Whatsapp = () => {
@@ -21,7 +19,7 @@ const Whatsapp = () => {
   return (
     <>
       <div
-        className="fixed bottom-10 right-7 w-min cursor-pointer rounded-full bg-green-600 p-2"
+        className="fixed bottom-10 right-7 z-30 w-min cursor-pointer rounded-full bg-green-600 p-2"
         onClick={handleClick}
       >
         <FaWhatsapp color="white" className="size-7 md:size-6" />
