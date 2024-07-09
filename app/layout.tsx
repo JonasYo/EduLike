@@ -1,4 +1,4 @@
-import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 import { Metadata } from 'next';
 import { Barlow, Montserrat_Alternates } from 'next/font/google';
@@ -29,6 +29,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         className={`${montserrat_alternates_init.variable} ${barlow_init.variable}`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
