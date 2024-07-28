@@ -1,16 +1,16 @@
 import { FaWhatsapp } from 'react-icons/fa6';
 
-const Whatsapp = () => {
-  const phone = '41987968381';
-  const message =
-    'Olá,%20boa%20tarde!%20%0A%0AEstou%20interessado(a)%20em%20obter%20mais%20informações%20sobre%20a%20sua%20empresa.%0A%0APode%20me%20fornecer%20mais%20detalhes?';
+import { WhatsappContactProps } from 'common/types';
 
+const Whatsapp = (props: WhatsappContactProps) => {
   const handleClick = async () => {
     if (navigator.userAgent.includes('WhatsApp')) {
-      window.open(`whatsapp://send?phone=${phone}&text=${message}`);
+      window.open(
+        `whatsapp://send?phone=${props.phoneNumber}&text=${props.message}`,
+      );
     } else {
       window.open(
-        `https://api.whatsapp.com/send?phone=${phone}&text=${message}`,
+        `https://api.whatsapp.com/send?phone=${props.phoneNumber}&text=${props.message}`,
         '_blank',
       );
     }

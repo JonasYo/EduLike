@@ -1,23 +1,19 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { IoClose, IoMenu } from 'react-icons/io5';
-import {
-  RiFacebookBoxLine,
-  RiInstagramLine,
-  RiLinkedinBoxLine,
-  RiWhatsappLine,
-} from 'react-icons/ri';
 
+import { HeaderProps } from 'common/types';
+import SocialNetworks from 'components/SocialNetworks';
 import useDeviceDetection from 'hooks/useDeviceDetection';
 
-const Header = () => {
+const Header = ({ menu }: { menu?: HeaderProps[] }) => {
   const [scroll, setScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isMobile } = useDeviceDetection();
-
+  console.log('menu', menu);
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY > 100);
@@ -29,31 +25,22 @@ const Header = () => {
     };
   }, [scroll]);
 
-  const menuOptions = [
-    { name: 'Início', link: '/' },
-    { name: 'Quem somos', link: '/#about' },
-    { name: 'Serviços', link: '/#services' },
-    { name: 'Contato', link: '/#contact' },
-  ];
-
   const navList = () => (
     <ul
-      className={`max-lg:flex max-lg:flex-col max-lg:gap-y-12 lg:flex lg:items-center lg:gap-x-4 ${
-        isMenuOpen ? 'show-menu' : ''
-      }`}
+      className={`max-lg:flex max-lg:flex-col max-lg:gap-y-12 lg:flex lg:items-center lg:gap-x-4 ${isMenuOpen ? 'show-menu' : ''}`}
     >
-      {menuOptions.map((menu, index) => (
+      {menu?.map((item, index) => (
         <li
           key={index}
-          className={`nav__item group relative`}
+          className={'nav__item group relative'}
           style={{ transitionDelay: `.${index * 2}s` }}
         >
           <Link
-            href={menu.link}
+            href={item.link}
             passHref
             onClick={() => isMobile && setIsMenuOpen(false)}
           >
-            <div className="flex w-auto flex-row items-center text-2xl font-semibold text-primary-500 hover:text-gray-700 lg:text-base">
+            <div className="flex w-auto flex-row items-center text-2xl font-semibold text-black hover:text-gray-700 lg:text-base">
               {!isMobile && (
                 <span className="opacity-0 transition-all duration-300 ease-in-out group-hover:mr-4 group-hover:flex group-hover:opacity-100">
                   <FiArrowUpRight className=" size-5 text-gray-700" />
@@ -61,7 +48,7 @@ const Header = () => {
               )}
 
               <span className="relative">
-                {menu.name}
+                {item.label}
                 <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-gray-700 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
               </span>
             </div>
@@ -71,45 +58,8 @@ const Header = () => {
     </ul>
   );
 
-  const socialLinks = () => (
-    <div className="flex gap-4 lg:ml-16">
-      <a
-        href="https://www.instagram.com/"
-        target="_blank"
-        className="duration-400 m-0 text-2xl text-primary-500 transition-transform hover:-translate-y-1"
-        rel="noreferrer"
-      >
-        <RiInstagramLine className="lg:size-6" />
-      </a>
-      <a
-        href="https://linkedin.com/"
-        target="_blank"
-        className="duration-400 m-0 text-2xl text-primary-500 transition-transform hover:-translate-y-1"
-        rel="noreferrer"
-      >
-        <RiLinkedinBoxLine className="size-6" />
-      </a>
-      <a
-        href="https://facebook.com/"
-        target="_blank"
-        className="duration-400 text-2xl text-primary-500 transition-transform hover:-translate-y-1"
-        rel="noreferrer"
-      >
-        <RiFacebookBoxLine className="size-6" />
-      </a>
-      <a
-        href="https://www.linkedin.com/"
-        target="_blank"
-        className="duration-400 text-2xl text-primary-500 transition-transform hover:-translate-y-1"
-        rel="noreferrer"
-      >
-        <RiWhatsappLine className="size-6" />
-      </a>
-    </div>
-  );
-
   const headerStyles = {
-    mobile: 'fixed inset-0 z-40 flex flex-col lg:hidden montserrat',
+    mobile: 'fixed w-full z-40 flex flex-col lg:hidden montserrat',
     desktop: `fixed top-0 z-50 w-full transition-all duration-300 ease-in-out montserrat ${
       scroll ? 'bg-white shadow-md' : 'bg-transparent'
     }`,
@@ -127,7 +77,12 @@ const Header = () => {
   };
 
   return (
-    <header className={headerStyles[isMobile ? 'mobile' : 'desktop']}>
+    <header
+      className={
+        headerStyles[isMobile ? 'mobile' : 'desktop'] +
+        `${isMenuOpen && ' inset-0'}`
+      }
+    >
       <nav className={navStyles[isMobile ? 'mobile' : 'desktop']}>
         <Link href="/" passHref>
           <Image
@@ -145,16 +100,16 @@ const Header = () => {
         >
           <div className={`lg:hidden`}>
             <button
-              className="flex items-center px-3 py-2 text-primary-500"
+              className="flex items-center px-3 py-2 text-black"
               onClick={handleMenuToggle}
               aria-label="Menu"
             >
-              <IoMenu color="text-primary-500" className="size-8" />
+              <IoMenu color="text-black" className="size-8" />
             </button>
           </div>
 
           {!isMobile && navList()}
-          {!isMobile && socialLinks()}
+          {/* {!isMobile && <SocialNetworks />} */}
         </div>
 
         {isMobile && (
@@ -166,16 +121,16 @@ const Header = () => {
             >
               <div className={'max-lg:absolute max-lg:right-5 max-lg:top-6'}>
                 <button
-                  className="flex items-center px-3 py-2 text-primary-500"
+                  className="flex items-center px-3 py-2 text-black"
                   onClick={handleMenuToggle}
                   aria-label="Menu"
                 >
-                  <IoClose color="text-primary-500" className="size-8" />
+                  <IoClose color="text-black" className="size-8" />
                 </button>
               </div>
 
               {navList()}
-              {socialLinks()}
+              <SocialNetworks />
             </div>
           </div>
         )}
@@ -184,4 +139,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

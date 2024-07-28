@@ -5,17 +5,21 @@ import { HTMLAttributes } from 'react';
 import Head from 'next/head';
 
 import { ScrollToTop, Whatsapp } from 'components';
+import { useContent } from 'context/ContentContext';
 
 import Footer from './Footer';
 import Header from './Header';
 
-export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
+export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
+  whatsapp?: string;
+}
 
 const Layout = ({ children }: LayoutProps) => {
+  const { content } = useContent();
   return (
     <>
       <Head>
-        <title>Experimento 626</title>
+        <title>{content?.theme?.title}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -25,11 +29,13 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
 
       <div className="main text-body font-body">
-        <Header />
+        {content?.theme && <Header {...content?.theme} />}
         {children}
-        <Footer />
+        {content?.theme?.footer && <Footer {...content?.theme} />}
         <ScrollToTop />
-        <Whatsapp />
+        {content?.theme?.whatsappContact && (
+          <Whatsapp {...content?.theme?.whatsappContact} />
+        )}
       </div>
     </>
   );

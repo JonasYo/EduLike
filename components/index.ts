@@ -1,8 +1,19 @@
 import Button from './Button';
-import CenterUp from './CenterUp';
+import CounterUp from './CounterUp';
+import CustomTitle from './CustomTitle';
 import ScrollToTop from './ScrollToTop';
+import SocialNetworks from './SocialNetworks';
 import TextEffect from './TextEffect';
 import Tooltip from './Tooltip';
 import Whatsapp from './Whatsapp';
 
-export { Button, CenterUp, ScrollToTop, TextEffect, Tooltip, Whatsapp };
+export {
+  Button,
+  CounterUp,
+  CustomTitle,
+  ScrollToTop,
+  SocialNetworks,
+  TextEffect,
+  Tooltip,
+  Whatsapp,
+};

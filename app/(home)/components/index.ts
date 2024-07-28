@@ -1,8 +1,9 @@
 import AboutUs from './AboutUs';
 import Banner from './Banner';
-import Contact from './Contact';
+import Contact from './ContactUs';
+import Flowchart from './Flowchart';
 import History from './History';
-import KeyFeatures from './KeyFeatures';
-import Services from './Services';
+import OurServices from './OurServices';
+import SomeCases from './SomeCases';
 
-export { AboutUs, Banner, Contact, History, KeyFeatures, Services };
+export { AboutUs, Banner, Contact, Flowchart, History, OurServices, SomeCases };

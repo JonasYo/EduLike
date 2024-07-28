@@ -2,6 +2,8 @@
 
 import { ChangeEvent, FormEvent, useState } from 'react';
 
+import { ContactUsProps } from 'common/types';
+
 interface FormData {
   subject: string;
   name: string;
@@ -10,7 +12,7 @@ interface FormData {
   termsAccepted: boolean;
 }
 
-const Contact = () => {
+const ContactUs = ({ title, subtitle }: ContactUsProps) => {
   const [formData, setFormData] = useState<FormData>({
     subject: '',
     name: '',
@@ -55,16 +57,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-custom-gradient py-20 text-white" id="contact">
+    <section className="purple-gradient py-16 text-white lg:py-24" id="contact">
       <div className="container ">
         <div className="mx-auto max-w-2xl lg:max-w-3xl">
           <div className="mb-12 text-center">
             <h2 className="font-heading animated text-4xl font-bold">
-              Entre em contato
+              {title}
             </h2>
-            <p className="text-blueGray-400 animated">
-              Teremos o maior prazer em ouvi-lo
-            </p>
+            <p className="text-blueGray-400 animated">{subtitle}</p>
           </div>
           <div className="-mx-3 flex flex-wrap text-center">
             <div className="animated mb-12 w-1/2 px-3 lg:w-1/3">
@@ -225,4 +225,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

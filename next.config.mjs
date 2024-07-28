@@ -14,14 +14,23 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
       fullUrl: true,
     },
   },
+  env: {
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    GRAPHCMS_PROJECT_API: process.env.GRAPHCMS_PROJECT_API,
+    GRAPHCMS_PROD_AUTH_TOKEN: process.env.GRAPHCMS_PROD_AUTH_TOKEN,
+    GRAPHCMS_DEV_AUTH_TOKEN: process.env.GRAPHCMS_DEV_AUTH_TOKEN,
+    GRAPHCMS_PREVIEW_SECRET: process.env.GRAPHCMS_PREVIEW_SECRET,
+  },
   experimental: { instrumentationHook: true },
   rewrites() {
     return [
-      { source: '/healthz', destination: '/api/health' },
-      { source: '/api/healthz', destination: '/api/health' },
-      { source: '/health', destination: '/api/health' },
-      { source: '/ping', destination: '/api/health' },
+      { source: '/api/ping', destination: '/api/ping' },
+      { source: '/api/webhook/content', destination: '/api/webhook/content' },
+      { source: '/api/content', destination: '/api/content' },
     ];
+  },
+  images: {
+    domains: ['media.graphassets.com', 'images.ctfassets.net'],
   },
 });
 
