@@ -25,7 +25,6 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   rewrites() {
     return [
       { source: '/api/ping', destination: '/api/ping' },
-      { source: '/api/webhook/content', destination: '/api/webhook/content' },
       { source: '/api/content', destination: '/api/content' },
     ];
   },
