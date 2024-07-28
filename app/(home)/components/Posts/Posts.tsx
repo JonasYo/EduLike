@@ -14,7 +14,7 @@ const InstagramEmbed = ({ src, height = 819, style }: InstagramEmbedProps) => {
       className="instagram-media instagram-media-rendered"
       title="instagram-media-rendered"
       src={src}
-      allowtransparency="true"
+      allowTransparency={true}
       allowFullScreen={true}
       frameBorder="0"
       height={height}
