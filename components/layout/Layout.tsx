@@ -9,7 +9,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
-  theme: ThemeProps;
+  theme?: ThemeProps;
 }
 
 const Layout = ({ children, theme }: LayoutProps) => {
