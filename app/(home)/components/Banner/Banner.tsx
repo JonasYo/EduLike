@@ -12,7 +12,7 @@ const Banner = (content: BannerProps) => {
     <section className="relative pb-8 pt-24" id="home">
       <Image
         src={content.image.url}
-        alt="Banner Image"
+        alt="Imagem do banner"
         layout="fill"
         objectFit="cover"
         priority

@@ -1,23 +1,28 @@
+import Image from 'next/image';
+
 import { SomeCasesProps } from 'common/types';
 
 type BlogCardProps = {
-  image: string;
+  src: string;
   date: string;
   CardTitle: string;
   CardDescription: string;
 };
 
-const BlogCard = ({
-  image,
-  date,
-  CardTitle,
-  CardDescription,
-}: BlogCardProps) => {
+const BlogCard = ({ src, date, CardTitle, CardDescription }: BlogCardProps) => {
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/3">
       <div className="mb-10 w-full">
         <div className="overflow-hidden rounded">
-          <img src={image} alt="" className="w-full" />
+          <Image
+            src={src}
+            alt="Case"
+            width={352}
+            height={390}
+            quality={99}
+            className="h-auto w-full"
+            loading="lazy"
+          />
         </div>
         <div>
           {date && (
@@ -67,7 +72,7 @@ const SomeCases = ({ title, subtitle, items }: SomeCasesProps) => {
                 date="Dec 22, 2023"
                 CardTitle={item.title}
                 CardDescription={item.description}
-                image={item?.image?.url}
+                src={item?.image?.url}
               />
             ))}
           </div>

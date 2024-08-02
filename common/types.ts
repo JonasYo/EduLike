@@ -1,11 +1,12 @@
 export type Content = {
-  header: HeaderProps[];
+  title: string;
+  slug: string;
   theme: ThemeProps;
   banner: BannerProps;
   flowchart: Image;
   aboutUs: AboutUsProps;
   ourServices: OurServicesProps;
-  history: HistoryProps;
+  history?: HistoryProps;
   contactUs: ContactUsProps;
   posts: PostsProps;
   someCases: SomeCasesProps;

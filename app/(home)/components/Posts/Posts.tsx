@@ -19,6 +19,7 @@ const InstagramEmbed = ({ src, height = 819, style }: InstagramEmbedProps) => {
       frameBorder="0"
       height={height}
       scrolling="no"
+      loading="lazy"
       style={{
         background: 'white',
         maxWidth: '1040px',

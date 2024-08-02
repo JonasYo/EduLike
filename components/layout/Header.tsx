@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
@@ -13,7 +15,7 @@ const Header = ({ menu }: { menu?: HeaderProps[] }) => {
   const [scroll, setScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isMobile } = useDeviceDetection();
-  console.log('menu', menu);
+
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY > 100);
@@ -91,7 +93,6 @@ const Header = ({ menu }: { menu?: HeaderProps[] }) => {
             alt="AugTrack"
             width={48}
             height={48}
-            priority
           />
         </Link>
 

@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { Typewriter } from 'react-simple-typewriter';
 
 export interface TextEffectProps {
@@ -16,9 +14,9 @@ const TextEffect = ({ texts = [] }: TextEffectProps) => {
         loop={true}
         cursor
         cursorStyle="_"
-        typeSpeed={100}
-        deleteSpeed={70}
-        delaySpeed={3000}
+        typeSpeed={80}
+        deleteSpeed={50}
+        delaySpeed={5000}
       />
     </>
   );

@@ -1,37 +1,37 @@
-'use client';
-
-import React from 'react';
-
 import dynamic from 'next/dynamic';
+import { draftMode } from 'next/headers';
 
+import { getHomePage } from 'app/api/client/api';
 import { Layout } from 'components/layout';
-import { useContent } from 'context/ContentContext'; // Ajuste o caminho conforme necessário
 
-const AboutUs = dynamic(() => import('./components/AboutUs'));
-const Banner = dynamic(() => import('./components/Banner'));
-const History = dynamic(() => import('./components/History'));
-const Flowchart = dynamic(() => import('./components/Flowchart'));
-const OurServices = dynamic(() => import('./components/OurServices'));
-const Posts = dynamic(() => import('./components/Posts'));
-const SomeCases = dynamic(() => import('./components/SomeCases'));
-const ContactUs = dynamic(() => import('./components/ContactUs'));
+import {
+  Banner,
+  ContactUs,
+  Flowchart,
+  OurServices,
+  Posts,
+  SomeCases,
+} from './components';
 
-const Home = () => {
-  const { content } = useContent();
-  console.log('content', content);
+// const AboutUs = dynamic(() => import('./components/AboutUs'), { ssr: false });
+const History = dynamic(() => import('./components/History'), { ssr: false });
+
+const Home = async () => {
+  const { isEnabled } = draftMode();
+  const homePage = await getHomePage(isEnabled);
 
   return (
-    <Layout>
-      {content?.banner && <Banner {...content?.banner} />}
-      {content?.flowchart && <Flowchart {...content?.flowchart} />}
-      {content?.aboutUs && <AboutUs {...content?.aboutUs} />}
-      {content?.ourServices && <OurServices {...content?.ourServices} />}
-      {content?.history && <History {...content?.history} />}
-      {content?.someCases && <SomeCases {...content?.someCases} />}
-      {content?.contactUs && <ContactUs {...content?.contactUs} />}
-      {content?.posts && <Posts {...content?.posts} />}
+    <Layout theme={homePage.theme}>
+      {homePage?.banner && <Banner {...homePage?.banner} />}
+      {homePage?.flowchart && <Flowchart {...homePage?.flowchart} />}
+      {/* {homePage?.aboutUs && <AboutUs {...homePage?.aboutUs} />} */}
+      {homePage?.ourServices && <OurServices {...homePage?.ourServices} />}
+      {homePage?.history && <History {...homePage?.history} />}
+      {homePage?.someCases && <SomeCases {...homePage?.someCases} />}
+      {homePage?.contactUs && <ContactUs {...homePage?.contactUs} />}
+      {homePage?.posts && <Posts {...homePage?.posts} />}
     </Layout>
   );
 };
 
-export default React.memo(Home);
+export default Home;
