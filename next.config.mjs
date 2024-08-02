@@ -23,7 +23,12 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   },
   experimental: { instrumentationHook: true },
   rewrites() {
-    return [{ source: '/api/ping', destination: '/api/ping' }];
+    return [
+      { source: '/api/ping', destination: '/api/ping' },
+      { source: '/api/disable-draft', destination: '/api/disable-draft' },
+      { source: '/api/draft', destination: '/api/draft' },
+      { source: '/api/revalidate', destination: '/api/revalidate' },
+    ];
   },
   images: {
     domains: ['videos.ctfassets.net', 'images.ctfassets.net'],
