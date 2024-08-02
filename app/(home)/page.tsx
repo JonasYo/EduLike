@@ -13,7 +13,7 @@ import {
   SomeCases,
 } from './components';
 
-// const AboutUs = dynamic(() => import('./components/AboutUs'), { ssr: false });
+const AboutUs = dynamic(() => import('./components/AboutUs'), { ssr: false });
 const History = dynamic(() => import('./components/History'), { ssr: false });
 
 const Home = async () => {
@@ -24,7 +24,7 @@ const Home = async () => {
     <Layout theme={homePage.theme}>
       {homePage?.banner && <Banner {...homePage?.banner} />}
       {homePage?.flowchart && <Flowchart {...homePage?.flowchart} />}
-      {/* {homePage?.aboutUs && <AboutUs {...homePage?.aboutUs} />} */}
+      {homePage?.aboutUs && <AboutUs {...homePage?.aboutUs} />}
       {homePage?.ourServices && <OurServices {...homePage?.ourServices} />}
       {homePage?.history && <History {...homePage?.history} />}
       {homePage?.someCases && <SomeCases {...homePage?.someCases} />}
