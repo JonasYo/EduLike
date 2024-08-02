@@ -17,7 +17,6 @@ export async function POST(req: Request) {
     const body = (await req.json()) as RequestBody;
     const { subject, name, email, message, phone } = body;
 
-    console.log('email: ' + email);
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: email,

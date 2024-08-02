@@ -16,7 +16,7 @@ export async function GET(request: Request) {
   }
 
   const page = await getHomePage(true);
-  console.log(page);
+
   if (!page) {
     return new Response('Page not found', { status: 401 });
   }

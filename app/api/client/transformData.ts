@@ -2,7 +2,6 @@ import { Content } from 'common/types';
 
 const transformData = (data: any): Content => {
   const response = data?.data?.homeCollection?.items[0];
-  console.log('response', response.theme.footer);
 
   return {
     title: response.title,
