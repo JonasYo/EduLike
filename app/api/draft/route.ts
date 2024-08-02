@@ -1,12 +1,13 @@
 import { draftMode } from 'next/headers';
-// import { redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
+
+import { getHomePage } from '../client/api';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get('secret');
-  const slug = searchParams.get('slug');
 
-  if (!secret || !slug) {
+  if (!secret) {
     return new Response('Missing parameters', { status: 400 });
   }
 
@@ -14,12 +15,12 @@ export async function GET(request: Request) {
     return new Response('Invalid token', { status: 401 });
   }
 
-  // const post = await getHomePage(slug);
-
-  // if (!post) {
-  //   return new Response('Invalid slug', { status: 401 });
-  // }
+  const page = await getHomePage(true);
+  console.log(page);
+  if (!page) {
+    return new Response('Page not found', { status: 401 });
+  }
 
   draftMode().enable();
-  // redirect(`/${post.slug}`);
+  redirect(`/`);
 }

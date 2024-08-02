@@ -16,10 +16,6 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   },
   env: {
     RESEND_API_KEY: process.env.RESEND_API_KEY,
-    GRAPHCMS_PROJECT_API: process.env.GRAPHCMS_PROJECT_API,
-    GRAPHCMS_PROD_AUTH_TOKEN: process.env.GRAPHCMS_PROD_AUTH_TOKEN,
-    GRAPHCMS_DEV_AUTH_TOKEN: process.env.GRAPHCMS_DEV_AUTH_TOKEN,
-    GRAPHCMS_PREVIEW_SECRET: process.env.GRAPHCMS_PREVIEW_SECRET,
   },
   experimental: { instrumentationHook: true },
   rewrites() {
