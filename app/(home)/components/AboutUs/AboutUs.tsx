@@ -26,10 +26,10 @@ const AboutUs = ({ title, subtitle, items }: AboutUsProps) => {
       <div className="container relative z-[2]">
         <div className="mb-12 flex max-w-2xl flex-wrap items-center justify-between lg:max-w-full">
           <div className="mb-4 w-full lg:mb-0 lg:w-1/3">
-            <CustomTitle title={title} style="flex flex-wrap" />
+            <CustomTitle title={title} styles="flex flex-wrap" />
           </div>
           <div className="w-full lg:w-1/2">
-            <p className="text-blueGray-400 leading-loose">{subtitle}</p>
+            <p className="leading-loose">{subtitle}</p>
           </div>
         </div>
         <div className="-mx-3 -mb-6 flex flex-wrap text-center">
@@ -52,9 +52,7 @@ const AboutUs = ({ title, subtitle, items }: AboutUsProps) => {
                 <h3 className="font-heading mb-2 text-xl font-bold">
                   {item?.title}
                 </h3>
-                <p className="text-blueGray-400 text-sm leading-relaxed">
-                  {item?.description}
-                </p>
+                <p className="text-sm leading-relaxed">{item?.description}</p>
               </div>
             </div>
           ))}

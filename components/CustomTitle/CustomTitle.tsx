@@ -2,15 +2,15 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 export interface CustomTitleProps {
   title: string;
-  style?: string;
+  styles?: string;
 }
 
-const CustomTitle = ({ title, style }: CustomTitleProps) => {
+const CustomTitle = ({ title, styles }: CustomTitleProps) => {
   const parts = title.split('|');
 
   return (
     <div className="w-full">
-      <h2 className={`font-heading text-3xl font-bold md:text-4xl ${style}`}>
+      <h2 className={`font-heading text-3xl font-bold md:text-4xl ${styles}`}>
         {parts.reduce<JSX.Element[]>((acc, part, index) => {
           const isHighlighted = index % 2 === 1;
           acc.push(

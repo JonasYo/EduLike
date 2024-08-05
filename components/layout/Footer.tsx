@@ -76,7 +76,7 @@ const Footer = (props: ThemeProps) => {
                   Redes sociais
                 </h4>
 
-                <SocialNetworks style="text-white" />
+                <SocialNetworks styles="text-white" />
 
                 <p className="text-body-color mt-6 text-base">
                   &copy;{' '}

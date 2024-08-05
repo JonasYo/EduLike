@@ -13,7 +13,7 @@ const TextEffect = ({ texts = [] }: TextEffectProps) => {
         words={texts}
         loop={true}
         cursor
-        cursorStyle="_"
+        cursorStyle="|"
         typeSpeed={80}
         deleteSpeed={50}
         delaySpeed={5000}

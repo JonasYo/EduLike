@@ -29,7 +29,7 @@ const OurServices = ({ title, items }: OurServicesProps) => {
                   </svg>
                 </div>
                 <h3 className="font-heading mb-2 font-bold">{item.title}</h3>
-                <p className="text-blueGray-400 text-sm">{item.description}</p>
+                <p className="text-sm">{item.description}</p>
               </div>
             </div>
           ))}

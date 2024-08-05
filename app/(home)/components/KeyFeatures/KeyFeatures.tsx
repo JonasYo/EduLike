@@ -23,7 +23,7 @@ const KeyFeatures = () => {
                   </svg>
                 </div>
                 <h3 className="font-heading mb-2 font-bold">Criatividade</h3>
-                <p className="text-blueGray-400 text-sm leading-loose">
+                <p className="text-sm leading-loose">
                   Estamos em busca de ideias inovadoras e soluções criativas
                   para transformar sua visão em realidade.
                 </p>
@@ -51,7 +51,7 @@ const KeyFeatures = () => {
                 <h3 className="font-heading mb-2 font-bold">
                   Início do Projeto
                 </h3>
-                <p className="text-blueGray-400 text-sm leading-loose">
+                <p className="text-sm leading-loose">
                   Dê o pontapé inicial no seu projeto com uma abordagem
                   estratégica e planejada.
                 </p>
@@ -91,7 +91,7 @@ const KeyFeatures = () => {
                   <h3 className="font-heading mb-2 text-xl font-semibold">
                     Expanda Seu Alcance
                   </h3>
-                  <p className="text-blueGray-400 leading-loose">
+                  <p className="leading-loose">
                     Amplie o impacto da sua presença digital e conquiste novos
                     mercados.
                   </p>
@@ -119,7 +119,7 @@ const KeyFeatures = () => {
                   <h3 className="font-heading mb-2 text-xl font-semibold">
                     Crescimento Anual
                   </h3>
-                  <p className="text-blueGray-400 leading-loose">
+                  <p className="leading-loose">
                     Experimente um crescimento anual contínuo e sustentável.
                   </p>
                 </div>
@@ -146,7 +146,7 @@ const KeyFeatures = () => {
                   <h3 className="font-heading mb-2 text-xl font-semibold">
                     Agende Seus Profissionais
                   </h3>
-                  <p className="text-blueGray-400 leading-loose">
+                  <p className="leading-loose">
                     Organize metas e maximize a produtividade com eficiência e
                     facilidade.
                   </p>

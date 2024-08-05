@@ -5,14 +5,14 @@ import {
   RiWhatsappLine,
 } from 'react-icons/ri';
 
-const SocialNetworks = ({ style = 'text-black' }: { style?: string }) => {
+const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
   return (
     <div className="flex gap-4">
       <a
         href="https://www.instagram.com/"
         target="_blank"
         rel="noreferrer"
-        className={`text-2xl transition-transform duration-300 hover:scale-110 ${style}`}
+        className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <RiInstagramLine />
       </a>
@@ -20,7 +20,7 @@ const SocialNetworks = ({ style = 'text-black' }: { style?: string }) => {
         href="https://linkedin.com/"
         target="_blank"
         rel="noreferrer"
-        className={`text-2xl transition-transform duration-300 hover:scale-110 ${style}`}
+        className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <RiLinkedinBoxLine />
       </a>
@@ -28,7 +28,7 @@ const SocialNetworks = ({ style = 'text-black' }: { style?: string }) => {
         href="https://facebook.com/"
         target="_blank"
         rel="noreferrer"
-        className={`text-2xl transition-transform duration-300 hover:scale-110 ${style}`}
+        className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <RiFacebookBoxLine />
       </a>
@@ -36,7 +36,7 @@ const SocialNetworks = ({ style = 'text-black' }: { style?: string }) => {
         href="https://www.whatsapp.com/"
         target="_blank"
         rel="noreferrer"
-        className={`text-2xl transition-transform duration-300 hover:scale-110 ${style}`}
+        className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <RiWhatsappLine />
       </a>

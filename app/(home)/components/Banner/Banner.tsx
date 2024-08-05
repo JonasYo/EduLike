@@ -21,10 +21,10 @@ const Banner = (content: BannerProps) => {
       <div className="container relative z-[2] flex min-h-[72vh] flex-col justify-center">
         <div className="montserrat py-12 text-center">
           <div className="mx-auto mb-8 max-w-3xl">
-            <p className="inline text-xl leading-relaxed md:text-lg lg:text-4xl">
+            <p className="inline text-2xl leading-relaxed md:text-lg lg:text-4xl">
               <ReactMarkdown
                 rehypePlugins={[remarkGfm]}
-                className="markdown-content"
+                className="markdown-content space-y-3"
               >
                 {onlyTitle}
               </ReactMarkdown>{' '}

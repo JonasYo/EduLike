@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,7 +24,7 @@ const NotFound = () => {
             <h2 className="font-heading mb-2 text-4xl font-bold">
               Algo deu errado!
             </h2>
-            <p className="text-blueGray-400 mb-6">
+            <p className="mb-6">
               Desculpe, mas não é possível abrir essa página.
             </p>
             <div>
@@ -36,7 +34,7 @@ const NotFound = () => {
                 </p>
               </Link>
               <Link href="/contact">
-                <p className="text-blueGray-500 hover:text-blueGray-800 bg-blueGray-50 hover:bg-blueGray-100 block rounded px-8 py-4 text-center text-xs font-semibold leading-none sm:inline-block">
+                <p className="block rounded bg-gray-50 px-8 py-4 text-center text-xs font-semibold leading-none text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:inline-block">
                   Fale Conosco
                 </p>
               </Link>
