@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { IoClose, IoMenu } from 'react-icons/io5';
 
-import { HeaderProps } from 'common/types';
+import { ThemeProps } from 'common/types';
 import SocialNetworks from 'components/SocialNetworks';
 import useDeviceDetection from 'hooks/useDeviceDetection';
 
-const Header = ({ menu }: { menu?: HeaderProps[] }) => {
+const Header = (props: ThemeProps) => {
   const [scroll, setScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isMobile } = useDeviceDetection();
@@ -31,7 +31,7 @@ const Header = ({ menu }: { menu?: HeaderProps[] }) => {
     <ul
       className={`max-lg:flex max-lg:flex-col max-lg:gap-y-12 lg:flex lg:items-center lg:gap-x-4 ${isMenuOpen ? 'show-menu' : ''}`}
     >
-      {menu?.map((item, index) => (
+      {props?.menu?.map((item, index) => (
         <li
           key={index}
           className={'nav__item group relative'}
@@ -86,15 +86,9 @@ const Header = ({ menu }: { menu?: HeaderProps[] }) => {
       }
     >
       <nav className={navStyles[isMobile ? 'mobile' : 'desktop']}>
-        <Link href="/" passHref>
-          <Image
-            className="size-12"
-            src="/media-logo.png"
-            alt="AugTrack"
-            width={48}
-            height={48}
-          />
-        </Link>
+        <a href="/#" className="mb-6 inline-block max-w-[160px]">
+          <Image src={props.logo.url} alt="Logo Image" width={48} height={48} />
+        </a>
 
         <div
           className={`flex h-full max-lg:flex-col max-lg:space-y-3.5 lg:items-center`}
@@ -110,7 +104,6 @@ const Header = ({ menu }: { menu?: HeaderProps[] }) => {
           </div>
 
           {!isMobile && navList()}
-          {/* {!isMobile && <SocialNetworks />} */}
         </div>
 
         {isMobile && (
