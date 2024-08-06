@@ -42,7 +42,7 @@ const Header = (props: ThemeProps) => {
             passHref
             onClick={() => isMobile && setIsMenuOpen(false)}
           >
-            <div className="flex w-auto flex-row items-center text-2xl font-semibold text-black hover:text-gray-700 lg:text-base">
+            <div className="flex w-auto flex-row items-center text-2xl font-semibold hover:text-gray-700 lg:text-base lg:text-white">
               {!isMobile && (
                 <span className="opacity-0 transition-all duration-300 ease-in-out group-hover:mr-4 group-hover:flex group-hover:opacity-100">
                   <FiArrowUpRight className=" size-5 text-gray-700" />
@@ -61,17 +61,17 @@ const Header = (props: ThemeProps) => {
   );
 
   const headerStyles = {
-    mobile: 'fixed w-full z-40 flex flex-col lg:hidden montserrat',
-    desktop: `fixed top-0 z-50 w-full transition-all duration-300 ease-in-out montserrat ${
-      scroll ? 'bg-white shadow-md' : 'bg-transparent'
+    mobile: `fixed w-full z-40 montserrat ${
+      scroll ? 'bg-primary-500 shadow-md' : 'bg-transparent'
+    }`,
+    desktop: `fixed z-50 w-full montserrat ${
+      scroll ? 'bg-primary-500 shadow-md' : 'bg-transparent'
     }`,
   };
 
   const navStyles = {
-    mobile: `flex items-center justify-between py-4 px-6 container mx-auto w-full ${
-      scroll ? 'bg-white shadow-md' : 'bg-transparent'
-    }`,
-    desktop: `flex items-center justify-between py-6 container mx-auto w-full lg:px-4`,
+    mobile: `py-4 px-6`,
+    desktop: `py-6 px-4`,
   };
 
   const handleMenuToggle = () => {
@@ -82,12 +82,23 @@ const Header = (props: ThemeProps) => {
     <header
       className={
         headerStyles[isMobile ? 'mobile' : 'desktop'] +
-        `${isMenuOpen && ' inset-0'}`
+        `${isMenuOpen && ' inset-0'} transition-all duration-300 ease-in-out`
       }
     >
-      <nav className={navStyles[isMobile ? 'mobile' : 'desktop']}>
-        <a href="/#" className="mb-6 inline-block max-w-[160px]">
-          <Image src={props.logo.url} alt="Logo Image" width={48} height={48} />
+      <nav
+        className={
+          navStyles[isMobile ? 'mobile' : 'desktop'] +
+          ' container mx-auto flex w-full items-center justify-between'
+        }
+      >
+        <a href="/#" className="inline-block max-w-[160px]">
+          <Image
+            src={props.logo.url}
+            alt="Logo Image"
+            width={0}
+            height={0}
+            className="h-14 w-36"
+          />
         </a>
 
         <div
@@ -95,11 +106,11 @@ const Header = (props: ThemeProps) => {
         >
           <div className={`lg:hidden`}>
             <button
-              className="flex items-center px-3 py-2 text-black"
+              className="flex items-center px-3 py-2 text-white"
               onClick={handleMenuToggle}
               aria-label="Menu"
             >
-              <IoMenu color="text-black" className="size-8" />
+              <IoMenu color="lg:text-white" className="size-8" />
             </button>
           </div>
 
@@ -115,11 +126,11 @@ const Header = (props: ThemeProps) => {
             >
               <div className={'max-lg:absolute max-lg:right-5 max-lg:top-6'}>
                 <button
-                  className="flex items-center px-3 py-2 text-black"
+                  className="flex items-center px-3 py-2 lg:text-white"
                   onClick={handleMenuToggle}
                   aria-label="Menu"
                 >
-                  <IoClose color="text-black" className="size-8" />
+                  <IoClose color="text-white" className="size-8" />
                 </button>
               </div>
 

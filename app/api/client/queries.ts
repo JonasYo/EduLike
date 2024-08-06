@@ -26,6 +26,9 @@ export const GET_HOME_PAGE = `
             link
           }
         }
+        logo {
+          url
+        }
       }
       socialNetworksCollection(limit: 5) {
         items {
@@ -33,11 +36,19 @@ export const GET_HOME_PAGE = `
           link
         }
       }
+      whatsappContact {
+        phoneNumber
+        message
+      }
     }
     banner {
       title
       texts
+      isTextBlack
       image {
+        url
+      }
+      video {
         url
       }
     }

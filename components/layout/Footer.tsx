@@ -39,7 +39,7 @@ const Footer = (props: ThemeProps) => {
               <div className="mb-10 w-full">
                 <a href="/#" className="mb-6 inline-block max-w-[160px]">
                   <Image
-                    src={props.logo.url}
+                    src={props?.footer?.logo?.url}
                     alt="Banner Image"
                     width={144}
                     height={144}

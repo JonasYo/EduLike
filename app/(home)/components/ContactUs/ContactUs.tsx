@@ -58,7 +58,7 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
 
   return (
     <section className="purple-gradient py-16  lg:py-24" id="contact">
-      <div className="container ">
+      <div className="container" data-aos="fade-up">
         <div className="mx-auto max-w-2xl lg:max-w-3xl">
           <div className="mb-12 text-center text-white">
             <h2 className="font-heading animated text-4xl font-bold">

@@ -42,23 +42,32 @@ const Posts = ({ title, subtitle }: PostsProps) => {
     <section className="py-16 lg:py-24" id="posts">
       <div className="container">
         <div className="flex flex-wrap justify-between">
-          <div className="mb-12 w-full text-center">
+          <div className="mb-12 w-full text-center" data-aos="fade-up">
             <h2 className="font-heading text-4xl font-bold">{title}</h2>
             <p className="text-blueGray-400">{subtitle}</p>
           </div>
 
-          <div className="flex w-full content-between gap-8 overflow-x-scroll">
+          <div
+            className="flex w-full content-between gap-8 overflow-x-scroll"
+            data-aos="fade-up"
+          >
             <InstagramEmbed
               src="https://www.instagram.com/p/C9fVuJZRKAH/embed/captioned"
               height={719}
+              data-aos="fade-up"
+              data-aos-delay={2000}
             />
             <InstagramEmbed
               src="https://www.instagram.com/reel/C9z73RkPD4J/embed/captioned"
               height={719}
+              data-aos="fade-up"
+              data-aos-delay={4000}
             />
             <InstagramEmbed
               src="https://www.instagram.com/p/C9SgG2_RMY9/embed/captioned"
               height={719}
+              data-aos="fade-up"
+              data-aos-delay={6000}
             />
           </div>
         </div>

@@ -31,10 +31,20 @@
 }
 
 .purple-gradient {
-  background: radial-gradient(ellipse at left top, #650979 -36%, #191616 66%);
+  background: radial-gradient(
+    ellipse at left top,
+    rgba(155, 48, 138, 1) 22%,
+    rgba(209, 95, 158, 1) 70%,
+    rgba(225, 147, 193, 1) 100%
+  );
+  /* background: linear-gradient(
+    270deg,
+    rgba(155, 48, 138, 1) 22%,
+    rgba(209, 95, 158, 1) 70%,
+    rgba(225, 147, 193, 1) 100%
+  ); */
   background-repeat: no-repeat;
   background-size: 184%;
-  z-index: -1;
   -webkit-animation: filter-animation-on-bg 30s ease infinite;
   animation: filter-animation-on-bg 30s ease infinite;
 }

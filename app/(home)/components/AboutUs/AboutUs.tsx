@@ -25,10 +25,14 @@ const AboutUs = ({ title, subtitle, items }: AboutUsProps) => {
 
       <div className="container relative z-[2]">
         <div className="mb-12 flex max-w-2xl flex-wrap items-center justify-between lg:max-w-full">
-          <div className="mb-4 w-full lg:mb-0 lg:w-1/3">
+          <div className="mb-4 w-full lg:mb-0 lg:w-1/3" data-aos="fade-up">
             <CustomTitle title={title} styles="flex flex-wrap" />
           </div>
-          <div className="w-full lg:w-1/2">
+          <div
+            className="w-full lg:w-1/2"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
             <p className="leading-loose">{subtitle}</p>
           </div>
         </div>
@@ -37,6 +41,8 @@ const AboutUs = ({ title, subtitle, items }: AboutUsProps) => {
             <div
               key={index}
               className="hover-up-5 mb-6 w-full px-3 md:w-1/2 lg:w-1/3"
+              data-aos="fade-up"
+              data-aos-delay={100 * (index + 1)}
             >
               <div className="rounded bg-white p-10 text-black shadow">
                 {item?.image?.url && (

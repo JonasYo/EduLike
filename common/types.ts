@@ -20,6 +20,8 @@ export type BannerProps = {
   title: string;
   texts: string[];
   image: Image;
+  video: Image;
+  isTextBlack: Boolean;
 };
 
 export type ThemeProps = {
@@ -54,6 +56,7 @@ export type FooterProps = {
   contactInfo: string;
   sitemapTitle: string;
   sitemap: SitemapProps[];
+  logo: Image;
 };
 
 export type Service = {

@@ -1,3 +1,5 @@
+'use client';
+
 import { FaWhatsapp } from 'react-icons/fa6';
 
 import { WhatsappContactProps } from 'common/types';

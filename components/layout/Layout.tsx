@@ -13,6 +13,8 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Layout = ({ children, theme }: LayoutProps) => {
+  console.log('theme?.whatsappContact', theme);
+
   return (
     <>
       <Head>
