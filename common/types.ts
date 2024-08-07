@@ -53,7 +53,9 @@ export type SitemapProps = {
 export type FooterProps = {
   subtitle: string;
   copyright: string;
-  contactInfo: string;
+  phoneNumber: string;
+  email: string;
+  address: string;
   sitemapTitle: string;
   sitemap: SitemapProps[];
   logo: Image;

@@ -1,8 +1,9 @@
 <svg width="1440" height="584" viewBox="0 0 1440 584" fill="none" xmlns="http://www.w3.org/2000/svg" style="background-repeat: no-repeat; background-size: 184%; z-index: -1;">
   <defs>
     <radialGradient id="radialGradient" cx="0%" cy="0%" r="100%" fx="0%" fy="0%">
-      <stop offset="-16%" style="stop-color:#650979; stop-opacity:1" />
-      <stop offset="96%" style="stop-color:#191616; stop-opacity:1" />
+      <stop offset="-36%" style="stop-color:#9b308a; stop-opacity:1" />
+      <!-- <stop offset="16%" style="stop-color:#d15f9e; stop-opacity:1" /> -->
+      <stop offset="96%" style="stop-color:#e193c1; stop-opacity:1" />
     </radialGradient>
   </defs>
   <path d="M0.178955 483.14V-0.179688H1440.18V483.14C1268.75 544.375 1009.85 583.382 720.179 583.382C430.506 583.382 171.612 544.375 0.178955 483.14Z" fill="url(#radialGradient)"/>

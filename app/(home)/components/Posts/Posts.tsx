@@ -48,7 +48,7 @@ const Posts = ({ title, subtitle }: PostsProps) => {
           </div>
 
           <div
-            className="flex w-full content-between gap-8 overflow-x-scroll"
+            className="flex w-full content-between gap-8 overflow-x-scroll lg:overflow-hidden"
             data-aos="fade-up"
           >
             <InstagramEmbed

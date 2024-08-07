@@ -26,7 +26,11 @@ const AboutUs = ({ title, subtitle, items }: AboutUsProps) => {
       <div className="container relative z-[2]">
         <div className="mb-12 flex max-w-2xl flex-wrap items-center justify-between lg:max-w-full">
           <div className="mb-4 w-full lg:mb-0 lg:w-1/3" data-aos="fade-up">
-            <CustomTitle title={title} styles="flex flex-wrap" />
+            <CustomTitle
+              title={title}
+              styles="flex flex-wrap"
+              partTextColor="text-secondary-500"
+            />
           </div>
           <div
             className="w-full lg:w-1/2"

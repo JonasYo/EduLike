@@ -15,8 +15,8 @@ const Banner = (content: BannerProps) => {
   let textColor = content.isTextBlack ? 'text-black' : 'text-white';
 
   return (
-    <section className="pb-8" id="home">
-      <div className="relative mb-8 min-h-[88vh]" id="home">
+    <section className="" id="home">
+      <div className="relative min-h-[88vh]" id="home">
         <div className="absolute size-full min-h-[84vh]">
           <div className="relative size-full">
             <Image
@@ -28,7 +28,7 @@ const Banner = (content: BannerProps) => {
               className="absolute inset-0 z-[2] size-full object-cover mix-blend-multiply"
             />
 
-            {!isMobile && (
+            {(!isMobile || !content.image.url) && (
               <video
                 src={content.video.url}
                 className="absolute inset-0 z-[1] size-full object-cover"
@@ -38,7 +38,7 @@ const Banner = (content: BannerProps) => {
               />
             )}
 
-            {isMobile && (
+            {isMobile && content?.image?.url && (
               <Image
                 src={content.image.url}
                 alt="Imagem do banner"

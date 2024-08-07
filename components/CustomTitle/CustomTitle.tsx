@@ -3,10 +3,12 @@ import remarkGfm from 'remark-gfm';
 export interface CustomTitleProps {
   title: string;
   styles?: string;
+  partTextColor?: string;
 }
 
-const CustomTitle = ({ title, styles }: CustomTitleProps) => {
+const CustomTitle = ({ title, styles, partTextColor }: CustomTitleProps) => {
   const parts = title.split('|');
+  let partText = partTextColor || 'text-primary-500';
 
   return (
     <div className="w-full">
@@ -14,10 +16,7 @@ const CustomTitle = ({ title, styles }: CustomTitleProps) => {
         {parts.reduce<JSX.Element[]>((acc, part, index) => {
           const isHighlighted = index % 2 === 1;
           acc.push(
-            <span
-              key={index}
-              className={isHighlighted ? 'text-primary-500' : ''}
-            >
+            <span key={index} className={isHighlighted ? partText : ''}>
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {part.replace(' ', '&nbsp;')}
               </ReactMarkdown>

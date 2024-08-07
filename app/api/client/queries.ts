@@ -18,8 +18,11 @@ export const GET_HOME_PAGE = `
       }
       footer {
         subtitle
-        contactInfo
+        phoneNumber
+        email
+        address
         sitemapTitle
+        copyright
         sitemapCollection(limit: 5) {
           items {
             label

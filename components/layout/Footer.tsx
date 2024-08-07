@@ -31,8 +31,8 @@ const Footer = (props: ThemeProps) => {
   };
 
   return (
-    <>
-      <footer className="purple-gradient relative z-10 pb-10 pt-20 text-white lg:pb-20 lg:pt-[120px]">
+    <footer>
+      <div className="purple-gradient relative z-10 pb-10 pt-20 text-white lg:pb-20 lg:pt-[120px]">
         <div className="container">
           <div className="-mx-4 lg:flex">
             <div className="max-w-5/12 mr-auto px-4 sm:w-2/3 lg:w-4/12">
@@ -43,6 +43,7 @@ const Footer = (props: ThemeProps) => {
                     alt="Banner Image"
                     width={144}
                     height={144}
+                    className="-mt-4 h-14 w-36"
                   />
                 </a>
                 <p className="text-body-color mb-7 text-base">
@@ -50,7 +51,7 @@ const Footer = (props: ThemeProps) => {
                     remarkPlugins={[remarkGfm]}
                     className="markdown-content"
                   >
-                    {props.footer.subtitle}
+                    {props?.footer?.subtitle}
                   </ReactMarkdown>
                 </p>
               </div>
@@ -59,7 +60,7 @@ const Footer = (props: ThemeProps) => {
             <div className="px-4 sm:w-1/2 lg:w-3/12">
               <div className="mb-10 w-full">
                 <h4 className=" mb-9 text-lg font-semibold text-white">
-                  {props.footer.sitemapTitle}
+                  {props?.footer?.sitemapTitle}
                 </h4>
 
                 <ul className="cursor-pointer space-y-3">
@@ -77,16 +78,6 @@ const Footer = (props: ThemeProps) => {
                 </h4>
 
                 <SocialNetworks styles="text-white" />
-
-                <p className="text-body-color mt-6 text-base">
-                  &copy;{' '}
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    className="markdown-content"
-                  >
-                    {props.footer.copyright}
-                  </ReactMarkdown>
-                </p>
               </div>
             </div>
 
@@ -94,25 +85,41 @@ const Footer = (props: ThemeProps) => {
               <h4 className=" mb-9 text-lg font-semibold text-white">
                 Contatos
               </h4>
-
-              <p className="mb-4 flex text-sm font-medium">
-                <span className="text-primary mr-3">
-                  <FaPhoneVolume size={20} />
-                </span>
-                <span>{props.footer.contactInfo}</span>
-              </p>
-              <p className="mb-4 flex items-center text-sm font-medium">
-                <span className="text-primary mr-3">
-                  <FaEnvelope size={20} />
-                </span>
-                <span>{props.footer.contactInfo}</span>
-              </p>
-              <p className="flex items-center text-sm font-medium">
-                <span className="text-primary mr-3">
-                  <FaMapMarkerAlt size={20} />
-                </span>
-                <span>{props.footer.contactInfo}</span>
-              </p>
+              {props?.footer?.phoneNumber && (
+                <p className="mb-4 flex text-sm font-medium">
+                  <a
+                    href={`tel:${props.footer.phoneNumber}`}
+                    className="text-primary flex items-center"
+                  >
+                    <FaPhoneVolume size={20} className="mr-3" />
+                    <span>{props.footer.phoneNumber}</span>
+                  </a>
+                </p>
+              )}
+              {props?.footer?.email && (
+                <p className="mb-4 flex items-center text-sm font-medium">
+                  <a
+                    href={`mailto:${props.footer.email}`}
+                    className="text-primary flex items-center"
+                  >
+                    <FaEnvelope size={20} className="mr-3" />
+                    <span>{props.footer.email}</span>
+                  </a>
+                </p>
+              )}
+              {props?.footer?.address && (
+                <p className="flex items-center text-sm font-medium">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(props.footer.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary flex items-center"
+                  >
+                    <FaMapMarkerAlt size={28} className="mr-3" />
+                    <span>{props.footer.address}</span>
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -174,8 +181,20 @@ const Footer = (props: ThemeProps) => {
             </svg>
           </span>
         </div>
-      </footer>
-    </>
+      </div>
+
+      <div className="flex flex-col items-center border-t border-[#e193c1] bg-[#d15f9e] py-4">
+        <p className="text-lg text-white">
+          &copy;{' '}
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            className="markdown-content"
+          >
+            {props?.footer?.copyright}
+          </ReactMarkdown>
+        </p>
+      </div>
+    </footer>
   );
 };
 

@@ -42,16 +42,16 @@ const Header = (props: ThemeProps) => {
             passHref
             onClick={() => isMobile && setIsMenuOpen(false)}
           >
-            <div className="flex w-auto flex-row items-center text-2xl font-semibold hover:text-gray-700 lg:text-base lg:text-white">
+            <div className="flex w-auto flex-row items-center text-2xl font-semibold hover:text-gray-200 lg:text-base lg:text-white">
               {!isMobile && (
                 <span className="opacity-0 transition-all duration-300 ease-in-out group-hover:mr-4 group-hover:flex group-hover:opacity-100">
-                  <FiArrowUpRight className=" size-5 text-gray-700" />
+                  <FiArrowUpRight className=" size-5 text-white" />
                 </span>
               )}
 
               <span className="relative">
                 {item.label}
-                <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-gray-700 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
+                <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-white transition-transform duration-300 ease-in-out group-hover:scale-x-100"></span>
               </span>
             </div>
           </Link>
