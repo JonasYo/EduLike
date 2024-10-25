@@ -27,7 +27,11 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
     ];
   },
   images: {
-    domains: ['videos.ctfassets.net', 'images.ctfassets.net'],
+    domains: [
+      'videos.ctfassets.net',
+      'images.ctfassets.net',
+      'images.unsplash.com',
+    ],
     minimumCacheTTL: 31536000,
   },
 });
