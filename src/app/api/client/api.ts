@@ -1,4 +1,4 @@
-import { Content } from 'src/common/types';
+import { Content } from 'common/types';
 
 import { GET_HOME_PAGE } from './queries';
 import transformData from './transformData';

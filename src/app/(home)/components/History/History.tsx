@@ -1,5 +1,5 @@
+import { HistoryProps } from 'common/types';
 import CounterUp from 'components/CounterUp';
-import { HistoryProps } from 'src/common/types';
 
 const History = ({ stats }: HistoryProps) => {
   return (
@@ -12,7 +12,7 @@ const History = ({ stats }: HistoryProps) => {
               className="hover-up-5 wow animate__animated animate__fadeIn flex w-1/2 py-4 lg:w-auto"
               data-wow-delay={`.${index * 2}s`}
             >
-              <div className="flex size-12 items-center justify-center rounded-xl bg-gray-50 text-primary-500 sm:size-20">
+              <div className="text-primary-500 flex size-12 items-center justify-center rounded-xl bg-gray-50 sm:size-20">
                 <svg
                   className="size-8"
                   fill="none"

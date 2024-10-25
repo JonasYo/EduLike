@@ -1,4 +1,4 @@
-import { Content } from 'src/common/types';
+import { Content } from 'common/types';
 
 const transformData = (data: any): Content => {
   const response = data?.data?.homeCollection?.items[0];

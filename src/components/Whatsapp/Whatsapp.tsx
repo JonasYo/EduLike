@@ -2,7 +2,7 @@
 
 import { FaWhatsapp } from 'react-icons/fa6';
 
-import { WhatsappContactProps } from 'src/common/types';
+import { WhatsappContactProps } from 'common/types';
 
 const Whatsapp = (props: WhatsappContactProps) => {
   const handleClick = async () => {
