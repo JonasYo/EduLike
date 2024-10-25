@@ -50,7 +50,7 @@ const Banner = (content: BannerProps) => {
             <div className="container z-[3] flex min-h-[88vh] flex-col justify-center">
               <div className="montserrat py-12 text-center">
                 <div className="mx-auto mb-8 max-w-3xl">
-                  <p
+                  <h1
                     className={`inline text-2xl leading-relaxed md:text-lg lg:text-4xl`}
                     data-aos="fade-down"
                   >
@@ -65,7 +65,7 @@ const Banner = (content: BannerProps) => {
                         <TextEffect texts={texts} />
                       </span>
                     )}
-                  </p>
+                  </h1>
                 </div>
               </div>
             </div>

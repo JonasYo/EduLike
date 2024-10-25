@@ -21,9 +21,9 @@ const barlow_init = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: 'Edu Like',
+  title: 'Likedu',
   description:
-    'A Edu Like utiliza o marketing digital para criar sites, redes sociais e anúncios digitais para marcas de todos os tamanhos.',
+    'A Likedu utiliza o marketing digital para criar sites, redes sociais e anúncios digitais para marcas de todos os tamanhos.',
 };
 
 function RootLayout({ children }: { children: React.ReactNode }) {
