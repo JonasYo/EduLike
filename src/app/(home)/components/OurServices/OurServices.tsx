@@ -3,8 +3,6 @@ import { CustomTitle } from 'components';
 import DynamicIcon from 'components/DynamicIcon';
 
 const OurServices = async ({ title, items }: OurServicesProps) => {
-  console.log('OurServices', items.length);
-
   return (
     <section className="bg-white py-16 lg:py-24" id="services">
       <div className="container">

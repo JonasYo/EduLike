@@ -7,7 +7,6 @@ const transformData = (data: any): Content => {
   const socialNetworksItems = response?.theme?.socialNetworksCollection?.items;
   const sitemapItems = response?.theme?.footer?.sitemapCollection?.items;
   const aboutUsItems = response?.aboutUs?.itemsCollection?.items;
-  console.log(response?.aboutUs?.itemsCollection?.items[0]);
   const ourServicesItems = response?.ourServices?.itemsCollection?.items;
   const someCaseItems = response?.someCases?.itemsCollection?.items;
 

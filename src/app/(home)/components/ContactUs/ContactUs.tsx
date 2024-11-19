@@ -39,7 +39,7 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('formData', formData);
+    // console.log('formData', formData);
     const response = await fetch('/api/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -47,7 +47,7 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
     });
 
     if (response.ok) {
-      console.log('Email sent successfully');
+      // console.log('Email sent successfully');
       setFormData({
         subject: '',
         name: '',
