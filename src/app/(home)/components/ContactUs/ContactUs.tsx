@@ -26,6 +26,8 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
     message: '',
     termsAccepted: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
@@ -42,11 +44,13 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log('formData', formData);
+    setIsLoading(true);
     const response = await fetch('/api/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
+    setIsLoading(false);
 
     if (response.ok) {
       setFormData({
@@ -57,10 +61,11 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
         termsAccepted: false,
       });
       toast.dark('Email enviado com sucesso! 👌');
-    } else {
-      console.error('Failed to send email');
-      toast.dark('Algo deu errado 😞. Tente novamente mais tarde.');
+      return;
     }
+
+    console.error('Failed to send email');
+    toast.dark('Algo deu errado 😞. Tente novamente mais tarde.');
   };
 
   return (
@@ -168,13 +173,17 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
                         Concordo com os termos e condições.
                       </span>
                     </label> */}
-
                   <button
-                    className="text-md w-full rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90"
+                    className="text-md w-full justify-items-center rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
                     type="submit"
                     aria-label="Enviar"
+                    disabled={isLoading}
                   >
-                    Enviar
+                    {isLoading ? (
+                      <div className="size-6 animate-spin rounded-full border-b-2 border-current" />
+                    ) : (
+                      'Enviar'
+                    )}
                   </button>
                 </div>
               )}

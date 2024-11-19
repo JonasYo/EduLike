@@ -27,12 +27,20 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
     ];
   },
   images: {
-    domains: [
-      'videos.ctfassets.net',
-      'images.ctfassets.net',
-      'images.unsplash.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'videos.ctfassets.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
-    minimumCacheTTL: 31536000,
   },
 });
 

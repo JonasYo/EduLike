@@ -50,7 +50,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
             </Text>
             <Hr className="mx-0 my-[26px] w-full border border-solid border-[#eaeaea]" />
             <Text className="text-[12px] leading-[24px] text-slate-500">
-              EduLike
+              Likedu
             </Text>
           </Container>
         </Body>
