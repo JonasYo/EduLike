@@ -15,6 +15,11 @@ export type Content = {
 export type Image = {
   url: string;
 };
+export type Icon = {
+  backgroundColor: string;
+  iconColor: string;
+  iconName: string;
+};
 
 export type BannerProps = {
   title: string;
@@ -65,6 +70,7 @@ export type Service = {
   title: string;
   description: string;
   image: Image;
+  icon: Icon;
 };
 
 export type AboutUsProps = {

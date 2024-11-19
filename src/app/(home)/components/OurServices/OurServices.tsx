@@ -2,9 +2,9 @@ import { OurServicesProps } from 'common/types';
 import { CustomTitle } from 'components';
 import DynamicIcon from 'components/DynamicIcon';
 
-import { iconsStyles } from './const';
-
 const OurServices = async ({ title, items }: OurServicesProps) => {
+  console.log('OurServices', items.length);
+
   return (
     <section className="bg-white py-16 lg:py-24" id="services">
       <div className="container">
@@ -28,11 +28,11 @@ const OurServices = async ({ title, items }: OurServicesProps) => {
             >
               <div className="flex flex-col rounded-xl bg-white px-6 pb-6 pt-8 hover:bg-[#F9F8FE] ">
                 <div
-                  className={`p-4 ${iconsStyles[index]?.backgroundColor} w-fit rounded-2xl`}
+                  className={`p-4 ${item?.icon?.backgroundColor} w-fit rounded-2xl`}
                 >
                   <DynamicIcon
-                    name="calendar-check-2"
-                    color={iconsStyles[index]?.iconColor}
+                    name={item?.icon?.iconName}
+                    color={item?.icon?.iconColor}
                   />
                 </div>
 

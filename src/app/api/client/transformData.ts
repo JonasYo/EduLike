@@ -3,34 +3,42 @@ import { Content } from 'common/types';
 const transformData = (data: any): Content => {
   const response = data?.data?.homeCollection?.items[0];
 
+  const menuItems = response?.theme?.menuCollection?.items;
+  const socialNetworksItems = response?.theme?.socialNetworksCollection?.items;
+  const sitemapItems = response?.theme?.footer?.sitemapCollection?.items;
+  const aboutUsItems = response?.aboutUs?.itemsCollection?.items;
+  console.log(response?.aboutUs?.itemsCollection?.items[0]);
+  const ourServicesItems = response?.ourServices?.itemsCollection?.items;
+  const someCaseItems = response?.someCases?.itemsCollection?.items;
+
   return {
-    title: response.title,
-    slug: response.slug,
+    title: response?.title,
+    slug: response?.slug,
     theme: {
-      ...response.theme,
-      menu: response.theme.menuCollection.items,
-      socialNetworks: response.theme.socialNetworksCollection.items,
+      ...response?.theme,
+      menu: menuItems,
+      socialNetworks: socialNetworksItems,
       footer: {
-        ...response.theme.footer,
-        sitemap: response.theme.footer.sitemapCollection.items,
+        ...response?.theme?.footer,
+        ...(sitemapItems && { sitemap: sitemapItems }),
       },
     },
-    banner: response.banner,
-    flowchart: response.flowchart,
+    banner: response?.banner,
+    flowchart: response?.flowchart,
     aboutUs: {
-      ...response.aboutUs,
-      items: response.aboutUs.itemsCollection.items,
+      ...response?.aboutUs,
+      ...(aboutUsItems && { items: aboutUsItems }),
     },
     ourServices: {
-      ...response.ourServices,
-      items: response.ourServices.itemsCollection.items,
+      ...response?.ourServices,
+      ...(ourServicesItems && { items: ourServicesItems }),
     },
-    posts: response.posts,
+    posts: response?.posts,
     someCases: {
-      ...response.someCases,
-      items: response.someCases.itemsCollection.items,
+      ...response?.someCases,
+      ...(someCaseItems && { items: someCaseItems }),
     },
-    contactUs: response.contactUs,
+    contactUs: response?.contactUs,
   };
 };
 

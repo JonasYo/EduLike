@@ -3,11 +3,13 @@ import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import dynamic from 'next/dynamic';
 
 interface IconProps extends LucideProps {
-  name: keyof typeof dynamicIconImports;
+  name: keyof typeof dynamicIconImports | string;
 }
 
 const Icon = ({ name, ...props }: IconProps) => {
-  const LucideIcon = dynamic(dynamicIconImports[name]);
+  const iconName = (name as keyof typeof dynamicIconImports) || 'alarm-clock';
+
+  const LucideIcon = dynamic(dynamicIconImports[iconName]);
 
   return <LucideIcon {...props} />;
 };

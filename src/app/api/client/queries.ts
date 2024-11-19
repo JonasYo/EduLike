@@ -74,13 +74,14 @@ export const GET_HOME_PAGE = `
     ourServices {
       title
       subtitle
-      itemsCollection(limit: 5) {
+      itemsCollection(limit: 12) {
         items {
           title
           description
           image {
             url
           }
+          icon
         }
       }
     }

@@ -88,16 +88,20 @@ const Home = async () => {
   const { isEnabled } = draftMode();
   const homePage = await getHomePage(isEnabled);
 
+  const isEmpty = (obj: any) => Object.keys(obj).length === 0;
+
   return (
     <Layout theme={homePage.theme}>
-      {homePage?.banner && <Banner {...homePage?.banner} />}
+      {!isEmpty(homePage?.banner) && <Banner {...homePage?.banner} />}
       {homePage?.flowchart && <Flowchart {...homePage?.flowchart} />}
-      {homePage?.aboutUs && <AboutUs {...homePage?.aboutUs} />}
-      {homePage?.ourServices && <OurServices {...homePage?.ourServices} />}
+      {!isEmpty(homePage?.aboutUs) && <AboutUs {...homePage?.aboutUs} />}
+      {!isEmpty(homePage?.ourServices) && (
+        <OurServices {...homePage?.ourServices} />
+      )}
       {homePage?.history && <History {...homePage?.history} />}
-      {homePage?.someCases && <SomeCases {...homePage?.someCases} />}
-      {homePage?.contactUs && <ContactUs {...homePage?.contactUs} />}
-      {homePage?.posts && <Posts {...homePage?.posts} />}
+      {!isEmpty(homePage?.someCases) && <SomeCases {...homePage?.someCases} />}
+      {!isEmpty(homePage?.contactUs) && <ContactUs {...homePage?.contactUs} />}
+      {!isEmpty(homePage?.posts) && <Posts {...homePage?.posts} />}
     </Layout>
   );
 };

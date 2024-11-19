@@ -11,8 +11,6 @@ const Banner = (content: BannerProps) => {
   const [onlyTitle, ...texts] = content?.title.split('-');
   let textColor = content.isTextBlack ? 'text-black' : 'text-white';
 
-  console.log('content.video.url', content.video.url);
-
   return (
     <section className="rounded-[60px]" id="home">
       <div className="px-8">
