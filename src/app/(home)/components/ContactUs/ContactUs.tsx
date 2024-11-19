@@ -2,6 +2,8 @@
 
 import { ChangeEvent, FormEvent, useState } from 'react';
 
+import { toast } from 'react-toastify';
+
 import { ContactUsProps } from 'common/types';
 import { CustomTitle } from 'components';
 import useDeviceDetection from 'hooks/useDeviceDetection';
@@ -47,7 +49,6 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
     });
 
     if (response.ok) {
-      // console.log('Email sent successfully');
       setFormData({
         subject: '',
         name: '',
@@ -55,8 +56,10 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
         message: '',
         termsAccepted: false,
       });
+      toast.dark('Email enviado com sucesso! 👌');
     } else {
       console.error('Failed to send email');
+      toast.dark('Algo deu errado 😞. Tente novamente mais tarde.');
     }
   };
 

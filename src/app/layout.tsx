@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Barlow, Montserrat_Alternates } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { AOSInit } from 'components/AOSInit/AOSInit';
 
@@ -27,6 +29,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         className={`${montserrat_alternates_init.variable} ${barlow_init.variable}`}
       >
         {children}
+        <ToastContainer />
         <Analytics />
         <SpeedInsights />
       </body>

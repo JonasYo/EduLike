@@ -75,6 +75,7 @@
     "react-markdown": "^9.0.1",
     "react-scroll-up": "^1.4.0",
     "react-simple-typewriter": "^5.0.1",
+    "react-toastify": "^10.0.6",
     "react-visibility-sensor": "^5.1.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
