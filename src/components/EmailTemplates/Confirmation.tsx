@@ -64,7 +64,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
                 <Section>
                   <Row>
                     <Column>
-                      <Link href="https://likedu.com.br">
+                      <Link href="https://www.likedu.com.br">
                         <Img
                           src={`https://cdn.icon-icons.com/icons2/2972/PNG/512/twitter_logo_icon_186891.png`}
                           width="32"
@@ -75,7 +75,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
                       </Link>
                     </Column>
                     <Column>
-                      <Link href="https://likedu.com.br">
+                      <Link href="https://www.likedu.com.br">
                         <Img
                           src={`https://cdn.icon-icons.com/icons2/1195/PNG/512/1490889652-facebook_82510.png`}
                           width="32"
@@ -86,7 +86,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
                       </Link>
                     </Column>
                     <Column>
-                      <Link href="https://likedu.com.br">
+                      <Link href="https://www.likedu.com.br">
                         <Img
                           src={`https://cdn.icon-icons.com/icons2/805/PNG/512/linkedin_icon-icons.com_65929.png`}
                           width="32"
@@ -105,7 +105,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
           <Section>
             <Link
               style={footerLink}
-              href="https://likedu.com.br"
+              href="https://www.likedu.com.br"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -114,7 +114,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <Link
               style={footerLink}
-              href="https://likedu.com.br"
+              href="https://www.likedu.com.br"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -123,7 +123,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <Link
               style={footerLink}
-              href="https://likedu.com/community"
+              href="https://www.likedu.com/community"
               target="_blank"
               rel="noopener noreferrer"
               data-auth="NotApplicable"

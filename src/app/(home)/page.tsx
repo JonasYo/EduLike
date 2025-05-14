@@ -29,7 +29,7 @@ export async function generateMetadata() {
   const title = homePage?.theme?.title || 'Likedu';
   const description = homePage?.theme?.description || 'Default Description';
   const imageUrl = homePage?.theme?.image?.url || '/default-image.png';
-  const url = 'https://likedu.com.br/';
+  const url = 'https://www.likedu.com.br/';
 
   return {
     title: title,

@@ -18,7 +18,21 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
     RESEND_API_KEY: process.env.RESEND_API_KEY,
   },
   experimental: { instrumentationHook: true },
-  rewrites() {
+  async redirects() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/index.php',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
+  async rewrites() {
     return [
       { source: '/api/ping', destination: '/api/ping' },
       { source: '/api/disable-draft', destination: '/api/disable-draft' },

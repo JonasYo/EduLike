@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="canonical" href="https://www.likedu.com.br/" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"

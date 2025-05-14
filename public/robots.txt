@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://likedu.com.br/sitemap.xml
+Sitemap: https://www.likedu.com.br/sitemap.xml

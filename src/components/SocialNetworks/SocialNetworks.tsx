@@ -25,7 +25,7 @@ const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
         <FaSquareInstagram />
       </a>
       <a
-        href="https://linkedin.com/"
+        href="https://www.linkedin.com/"
         target="_blank"
         rel="noreferrer"
         className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
@@ -33,7 +33,7 @@ const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
         <FaLinkedin />
       </a>
       <a
-        href="https://facebook.com/"
+        href="https://www.facebook.com/"
         target="_blank"
         rel="noreferrer"
         className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
