@@ -12,6 +12,8 @@ const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
         href="https://www.whatsapp.com/"
         target="_blank"
         rel="noreferrer"
+        aria-label="WhatsApp"
+        title="WhatsApp"
         className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <FaSquareWhatsapp />
@@ -20,6 +22,8 @@ const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
         href="https://www.instagram.com/"
         target="_blank"
         rel="noreferrer"
+        aria-label="Instagram"
+        title="Instagram"
         className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <FaSquareInstagram />
@@ -28,6 +32,8 @@ const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
         href="https://www.linkedin.com/"
         target="_blank"
         rel="noreferrer"
+        aria-label="LinkedIn"
+        title="LinkedIn"
         className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <FaLinkedin />
@@ -36,6 +42,8 @@ const SocialNetworks = ({ styles = 'text-black' }: { styles?: string }) => {
         href="https://www.facebook.com/"
         target="_blank"
         rel="noreferrer"
+        aria-label="Facebook"
+        title="Facebook"
         className={`text-2xl transition-transform duration-300 hover:scale-110 ${styles}`}
       >
         <FaFacebookSquare />
