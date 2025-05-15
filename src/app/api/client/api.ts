@@ -4,7 +4,7 @@ import { GET_HOME_PAGE } from './queries';
 import transformData from './transformData';
 
 async function fetchGraphQL(query: string, preview = false): Promise<any> {
-  return fetch(
+  const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
@@ -17,9 +17,16 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
         }`,
       },
       body: JSON.stringify({ query }),
-      next: { tags: ['home'] },
+      next: {
+        tags: ['home'],
+        revalidate: 60 * 60,
+      },
     },
-  ).then((response) => response.json());
+  );
+
+  if (!res.ok) throw new Error(`Failed to fetch: ${res.statusText}`);
+
+  return res.json();
 }
 
 export async function getHomePage(isDraftMode: boolean): Promise<Content> {
