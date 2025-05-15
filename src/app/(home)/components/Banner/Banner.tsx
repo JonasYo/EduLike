@@ -34,16 +34,6 @@ const Banner = (content: BannerProps) => {
             />
           )}
 
-          {/* {isMobile && content?.image?.url && (
-            <Image
-              src={content.image.url}
-              alt="Imagem do banner"
-              layout="fill"
-              objectFit="cover"
-              priority
-            />
-          )} */}
-
           <div className="absolute inset-x-0 z-[3]">
             <div className="container z-[3] flex min-h-[88vh] flex-col justify-center">
               <div className="montserrat py-12 text-center">

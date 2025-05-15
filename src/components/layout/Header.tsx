@@ -40,7 +40,7 @@ const Header = (props: ThemeProps) => {
           'container mx-auto flex w-full items-center justify-between px-6 py-4 lg:px-4 lg:py-6'
         }
       >
-        <a href="/#" className="inline-block max-w-[160px]">
+        <a href="/" className="inline-block max-w-[160px]">
           <Image
             src={props.logo.url}
             alt="Logo Image"
