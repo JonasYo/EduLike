@@ -18,6 +18,7 @@ const Layout = ({ children, theme }: LayoutProps) => {
     <>
       <Head>
         <title>{theme?.title}</title>
+        <link rel="canonical" href="https://likedu.com.br/" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
