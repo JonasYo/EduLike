@@ -69,13 +69,13 @@ const Posts = ({ title, subtitle }: PostsProps) => {
               data-aos-delay={2000}
             />
             <InstagramEmbed
-              src="https://www.instagram.com/reel/DA2D347NCuM/embed/captioned"
+              src="https://www.instagram.com/reel/DMq1ORTPWPH/embed/captioned"
               height={719}
               data-aos="fade-up"
               data-aos-delay={4000}
             />
             <InstagramEmbed
-              src="https://www.instagram.com/p/DA63a66vTX8/embed/captioned"
+              src="https://www.instagram.com/p/DLljUyVNwi6/embed/captioned"
               height={719}
               data-aos="fade-up"
               data-aos-delay={6000}

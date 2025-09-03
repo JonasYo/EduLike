@@ -121,13 +121,13 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
                   {!isMobile && (
                     <div className="flex items-center justify-between">
                       <button
-                        className="text-md w-full rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
+                        className="text-md max-h-12 w-full rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
                         type="submit"
                         aria-label="Enviar"
                         disabled={isLoading}
                       >
                         {isLoading ? (
-                          <div className="mx-auto size-6 animate-spin rounded-full border-b-2 border-current" />
+                          <div className="mx-auto size-5 animate-spin rounded-full border-b-2 border-current" />
                         ) : (
                           'Enviar'
                         )}
@@ -150,7 +150,7 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
               {isMobile && (
                 <div className="flex items-center justify-between">
                   <button
-                    className="text-md w-full justify-items-center rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
+                    className="text-md max-h-12 w-full justify-items-center rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
                     type="submit"
                     aria-label="Enviar"
                     disabled={isLoading}

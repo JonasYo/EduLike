@@ -17,7 +17,7 @@ import {
 interface InterestProps {
   name: string;
   email: string;
-  phone: string;
+  subject: string;
   message: string;
   logoUrl?: string;
 }
@@ -25,7 +25,7 @@ interface InterestProps {
 export const Interest = ({
   name,
   email,
-  phone,
+  subject,
   message,
   logoUrl,
 }: InterestProps) => {
@@ -69,7 +69,7 @@ export const Interest = ({
           </Text>
 
           <Text className="text-[14px] leading-[24px] text-black">
-            - Nome: {name} <br />- Email: {email} <br />- Telefone: {phone}{' '}
+            - Nome: {name} <br />- Email: {email} <br />- Assunto: {subject}{' '}
             <br />- Mensagem: {message}
           </Text>
 

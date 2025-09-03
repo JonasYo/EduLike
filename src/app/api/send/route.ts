@@ -9,7 +9,6 @@ interface RequestBody {
   name: string;
   email: string;
   message: string;
-  phone: string;
 }
 
 const transporter = nodemailer.createTransport({
@@ -25,11 +24,11 @@ const transporter = nodemailer.createTransport({
 export async function POST(req: Request): Promise<Response> {
   try {
     const body = (await req.json()) as RequestBody;
-    const { subject, name, email, message, phone } = body;
+    const { subject, name, email, message } = body;
     const logoUrl = process.env.LOGO_URL;
 
     const interestEmailHtml = await render(
-      Interest({ name, email, message, phone, logoUrl }),
+      Interest({ name, email, subject, message, logoUrl }),
     );
 
     const mailOptions = {
