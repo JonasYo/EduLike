@@ -15,23 +15,41 @@ import {
 } from '@react-email/components';
 
 interface ConfirmationProps {
-  subject: string;
   name: string;
+  logoUrl?: string;
 }
 
-const logoUrl = process.env.LOGO_URL;
-
-export const Confirmation = ({ subject, name }: ConfirmationProps) => {
+export const Confirmation = ({ name, logoUrl }: ConfirmationProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Confirmação de Recebimento: {subject}</Preview>
+      <Preview>Confirmação de contato</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={logoContainer}>
-            <Img src={logoUrl} width="120" height="36" alt="Likedu" />
+            <table role="presentation" style={{ width: '100%' }}>
+              <tr>
+                <td style={{ textAlign: 'center' }}>
+                  <Img
+                    src={logoUrl}
+                    width="120"
+                    height="36"
+                    alt="Likedu"
+                    style={{
+                      display: 'block',
+                      maxWidth: '120px',
+                      width: '100%',
+                      height: 'auto',
+                      margin: '0',
+                      border: 'none',
+                      outline: 'none',
+                    }}
+                  />
+                </td>
+              </tr>
+            </table>
           </Section>
-          <Heading style={h1}>Confirmação de Recebimento: {subject}</Heading>
+          <Heading style={h1}>Confirmação de contato</Heading>
           <Text style={heroText}>
             Olá {name}, agradecemos por entrar em contato conosco! Recebemos com
             sucesso o seu interesse em nossos serviços/produtos.
@@ -58,7 +76,7 @@ export const Confirmation = ({ subject, name }: ConfirmationProps) => {
           <Section>
             <Row style={footerLogos}>
               <Column style={{ width: '66%' }}>
-                <Img src={logoUrl} width="120" height="36" alt="Likedu" />
+                <Img src={logoUrl} width="auto" height="36" alt="Likedu" />
               </Column>
               <Column>
                 <Section>

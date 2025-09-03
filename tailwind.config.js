@@ -144,7 +144,6 @@ module.exports = {
       },
     },
   },
-  // plugins: [require('tailwindcss-animate')],
   plugins: [addVariablesForColors],
   future: {
     hoverOnlyWhenSupported: true,

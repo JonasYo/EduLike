@@ -80,7 +80,6 @@
     "react-visibility-sensor": "^5.1.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
-    "resend": "^3.4.0",
     "swiper": "^11.1.4",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",

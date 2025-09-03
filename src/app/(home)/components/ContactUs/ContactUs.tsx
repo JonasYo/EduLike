@@ -13,7 +13,6 @@ interface FormData {
   name: string;
   email: string;
   message: string;
-  termsAccepted: boolean;
 }
 
 const ContactUs = ({ title, subtitle }: ContactUsProps) => {
@@ -24,7 +23,6 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
     name: '',
     email: '',
     message: '',
-    termsAccepted: false,
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -43,7 +41,6 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log('formData', formData);
     setIsLoading(true);
     const response = await fetch('/api/send', {
       method: 'POST',
@@ -58,7 +55,6 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
         name: '',
         email: '',
         message: '',
-        termsAccepted: false,
       });
       toast.dark('Email enviado com sucesso! 👌');
       return;
@@ -95,16 +91,6 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
                     <input
                       className="w-full rounded-xl bg-[#F7F5FF] p-4 text-sm font-semibold leading-none text-black outline-none"
                       type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Assunto"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      className="w-full rounded-xl bg-[#F7F5FF] p-4 text-sm font-semibold leading-none text-black outline-none"
-                      type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -121,28 +107,30 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
                       placeholder="Seu email"
                     />
                   </div>
+                  <div className="mb-4">
+                    <input
+                      className="w-full rounded-xl bg-[#F7F5FF] p-4 text-sm font-semibold leading-none text-black outline-none"
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="Assunto"
+                    />
+                  </div>
 
                   {!isMobile && (
                     <div className="flex items-center justify-between">
-                      {/* <label>
-                      <input
-                        className="mr-1"
-                        type="checkbox"
-                        name="termsAccepted"
-                        checked={formData.termsAccepted}
-                        onChange={handleChange}
-                      />
-                      <span className="text-sm font-semibold text-black">
-                        Concordo com os termos e condições.
-                      </span>
-                    </label> */}
-
                       <button
-                        className="text-md w-full rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90"
+                        className="text-md w-full rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
                         type="submit"
                         aria-label="Enviar"
+                        disabled={isLoading}
                       >
-                        Enviar
+                        {isLoading ? (
+                          <div className="mx-auto size-6 animate-spin rounded-full border-b-2 border-current" />
+                        ) : (
+                          'Enviar'
+                        )}
                       </button>
                     </div>
                   )}
@@ -161,18 +149,6 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
 
               {isMobile && (
                 <div className="flex items-center justify-between">
-                  {/* <label>
-                      <input
-                        className="mr-1"
-                        type="checkbox"
-                        name="termsAccepted"
-                        checked={formData.termsAccepted}
-                        onChange={handleChange}
-                      />
-                      <span className="text-sm font-semibold text-black">
-                        Concordo com os termos e condições.
-                      </span>
-                    </label> */}
                   <button
                     className="text-md w-full justify-items-center rounded-xl bg-[#8472EC] px-8 py-4 font-semibold leading-none text-white hover:opacity-90 disabled:opacity-50"
                     type="submit"
@@ -180,7 +156,7 @@ const ContactUs = ({ title, subtitle }: ContactUsProps) => {
                     disabled={isLoading}
                   >
                     {isLoading ? (
-                      <div className="size-6 animate-spin rounded-full border-b-2 border-current" />
+                      <div className="size-5 animate-spin rounded-full border-b-2 border-current" />
                     ) : (
                       'Enviar'
                     )}

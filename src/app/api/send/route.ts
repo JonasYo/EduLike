@@ -26,25 +26,26 @@ export async function POST(req: Request): Promise<Response> {
   try {
     const body = (await req.json()) as RequestBody;
     const { subject, name, email, message, phone } = body;
+    const logoUrl = process.env.LOGO_URL;
 
     const interestEmailHtml = await render(
-      Interest({ subject, name, email, message, phone }),
+      Interest({ name, email, message, phone, logoUrl }),
     );
 
     const mailOptions = {
       from: process.env.HOSTINGER_EMAIL,
       to: process.env.HOSTINGER_EMAIL,
-      subject: `Likedu - ${subject}`,
+      subject: `Likedu - Novo contato comercial: ${name}/${subject}`,
       html: interestEmailHtml,
     };
 
     const info = await transporter.sendMail(mailOptions);
 
-    const confirmationEmailHtml = await render(Confirmation({ subject, name }));
+    const confirmationEmailHtml = await render(Confirmation({ name, logoUrl }));
     const confirmationMailOptions = {
       from: process.env.HOSTINGER_EMAIL,
       to: email,
-      subject: `Likedu - ${subject}`,
+      subject: `Likedu - Confirmação de contato: ${name}/${subject}`,
       html: confirmationEmailHtml,
     };
 

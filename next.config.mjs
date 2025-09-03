@@ -14,9 +14,6 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
       fullUrl: true,
     },
   },
-  env: {
-    RESEND_API_KEY: process.env.RESEND_API_KEY,
-  },
   experimental: { instrumentationHook: true },
   async redirects() {
     return [

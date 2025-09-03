@@ -15,32 +15,50 @@ import {
 } from '@react-email/components';
 
 interface InterestProps {
-  subject: string;
   name: string;
   email: string;
   phone: string;
   message: string;
+  logoUrl?: string;
 }
 
-const logoUrl = process.env.LOGO_URL;
-
 export const Interest = ({
-  subject,
   name,
   email,
   phone,
   message,
+  logoUrl,
 }: InterestProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Novo Interesse Recebido {subject}</Preview>
+      <Preview>Novo contato comercial</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={logoContainer}>
-            <Img src={logoUrl} width="120" height="36" alt="Likedu" />
+            <table role="presentation" style={{ width: '100%' }}>
+              <tr>
+                <td style={{ textAlign: 'center' }}>
+                  <Img
+                    src={logoUrl}
+                    width="120"
+                    height="36"
+                    alt="Likedu"
+                    style={{
+                      display: 'block',
+                      maxWidth: '120px',
+                      width: '100%',
+                      height: 'auto',
+                      margin: '0',
+                      border: 'none',
+                      outline: 'none',
+                    }}
+                  />
+                </td>
+              </tr>
+            </table>
           </Section>
-          <Heading style={h1}>Novo Interesse Recebido: {subject}</Heading>
+          <Heading style={h1}>Novo contato comercial</Heading>
           <Text style={heroText}>
             Recebemos um novo interesse em nossos serviços/produtos através do
             formulário.
