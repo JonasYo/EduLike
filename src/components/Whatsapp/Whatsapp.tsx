@@ -19,7 +19,7 @@ const Whatsapp = (props: WhatsappContactProps) => {
   return (
     <>
       <div
-        className="right-1/12 fixed bottom-10 z-30 w-min cursor-pointer rounded-full p-2"
+        className="fixed bottom-10 right-[8.33%] z-30 w-min cursor-pointer rounded-full p-2"
         onClick={handleClick}
       >
         <svg
